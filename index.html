@@ -411,7 +411,13 @@ html.no-tts .say{display:none}
 .show-ph .ph{rotate:0deg;width:min(250px,66vw)}
 .show-ph .ph .scr{background:#fff}
 .show-ph .ph video{width:100%;height:100%;object-fit:contain;object-position:center}
-@media (min-width:900px){.showcase{grid-template-columns:minmax(280px,360px) 1fr;align-items:center;gap:40px}}
+@media (min-width:900px){.showcase{grid-template-columns:minmax(420px,600px) 1fr;align-items:center;gap:40px}}
+.win{display:block;width:100%;height:auto}
+.ngal{display:grid;grid-auto-flow:column;grid-auto-columns:min(86vw,560px);gap:6px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px var(--gut) 20px;margin:0 calc(var(--gut)*-1);scrollbar-width:none;align-items:start}
+.ngal::-webkit-scrollbar{display:none}
+.ngal figure{margin:0;scroll-snap-align:center}
+.ngal figcaption{margin-top:2px;padding:0 10px;font-size:14px;line-height:1.45;color:var(--ink-2)}
+.ngal figcaption b{display:block;font-size:19px;font-weight:400;letter-spacing:-.01em;color:var(--ink)}
 .stories{display:grid;grid-auto-flow:column;grid-auto-columns:min(70vw,280px);gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px var(--gut) 24px;margin:26px calc(var(--gut)*-1) 0;scrollbar-width:none}
 .stories::-webkit-scrollbar{display:none}
 .story{position:relative;scroll-snap-align:center;aspect-ratio:9/16;border-radius:26px;overflow:hidden;background:#111}
@@ -1039,13 +1045,25 @@ html.js:not(.gs) .rv:not(.in){translate:0 26px}
       <div class="lab"><b>Платформа изнутри</b><span class="br">Notion · Gemini</span></div>
       <h2 class="h split">Каждая тема <span class="lm">в одно касание</span></h2>
       <div class="showcase">
-        <div class="show-ph rv"><div class="ph"><div class="scr"><video class="vid" muted loop playsinline preload="none" data-poster="media/app-mobile.jpg"><source src="media/app-mobile.mp4" type="video/mp4"></video></div></div></div>
+        <div class="show-win rv"><img class="win" src="media/n-a0-home.webp" alt="Главная страница платформы A0–A2 в Notion: навигация, ресурсы, заметки, бонус" loading="lazy"></div>
         <div class="callouts">
           <div class="co rv"><span class="dot"></span><div><h4>Гайды по уровням</h4><p>A0–A2 и B1–C1. В каждом объяснение, видео, упражнение и разбор ответов. Как этот, только по каждой теме.</p></div></div>
           <div class="co rv"><span class="dot"></span><div><h4>Лексика по ситуациям</h4><p>Госорганы, работа, банк, врач, квартира. Фразы, которые нужны завтра, а не на экзамене через год.</p></div></div>
           <div class="co rv"><span class="dot"></span><div><h4>Gemini-приложения</h4><p>Словарь с озвучкой, текст с переводом по клику, три диалога, тест и чат с ИИ под экзаменационную тему.</p></div></div>
           <div class="co rv"><span class="dot"></span><div><h4>Трекер и карточки</h4><p>Цель, прогресс, интервальные повторения. Видно, сколько уже проехал.</p></div></div>
         </div>
+      </div>
+    </div>
+
+    <div style="margin-top:60px">
+      <div class="lab"><b>Вот как это выглядит в Notion</b><span class="br">листай →</span></div>
+      <div class="ngal">
+        <figure class="rv"><img class="win" src="media/n-a0-pronouns.webp" alt="Notion: раздел местоимений, неопределённые, указательные, притяжательные" loading="lazy"><figcaption><b>Местоимения</b>Указательные, притяжательные, таблицы склонения. der, die, das тоже отсюда.</figcaption></figure>
+        <figure class="rv"><img class="win" src="media/n-a0-grammar.webp" alt="Notion: страница грамматики A0–A2 с навигацией и основами" loading="lazy"><figcaption><b>Грамматика A0–A2</b>От алфавита и правил чтения дальше по порядку.</figcaption></figure>
+        <figure class="rv"><img class="win" src="media/n-b1-grammar.webp" alt="Notion: грамматика B1, времена и формы глаголов" loading="lazy"><figcaption><b>Грамматика B1</b>Plusquamperfekt, Präteritum, Futur I, пассив. Следующий отрезок маршрута.</figcaption></figure>
+        <figure class="rv"><img class="win" src="media/n-a0-progress.webp" alt="Notion: прогресс по темам с уровнями и заметками" loading="lazy"><figcaption><b>Прогресс по темам</b>Прошёл тему, поставил галочку. Видно, сколько уже проехал.</figcaption></figure>
+        <figure class="rv"><img class="win" src="media/n-a0-srs.webp" alt="Notion: система интервальных повторений, карточки слов по уровням" loading="lazy"><figcaption><b>Карточки слов</b>Интервальные повторения по уровням A1–C1.</figcaption></figure>
+        <figure class="rv"><img class="win" src="media/n-a0-newlex.webp" alt="Notion: новая лексика по ситуациям, больница" loading="lazy"><figcaption><b>Лексика по ситуациям</b>У терапевта, в аптеке, звонок в скорую.</figcaption></figure>
       </div>
     </div>
 
