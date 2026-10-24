@@ -468,6 +468,83 @@ html.no-tts .say{display:none}
 footer{padding:26px 0 100px;font-size:12px;color:var(--mute);background:var(--black)}
 footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
 
+/* ---------- compressor: 3 → 1 ---------- */
+.komp{border-radius:var(--r);background:var(--zircon);padding:20px 16px 18px;overflow:hidden}
+.kp-before{display:grid;gap:8px}
+.kp{margin:0;padding:12px 14px;border-radius:14px;background:#fff;font-size:clamp(17px,4.8vw,24px);letter-spacing:-.01em;line-height:1.25;transform-origin:50% 0}
+.kp .kd{border-radius:.25em;padding:0 .12em}
+.kp .ka{color:var(--lime-d);font-weight:600}
+.kp .dup{text-decoration-color:var(--red);text-decoration-thickness:2px}
+.kp-arrow{display:grid;place-items:center;height:44px;color:var(--mute)}
+.kp-arrow svg{width:22px;height:22px}
+.kp-after{position:relative;margin:0;padding:14px;border-radius:14px;background:var(--black);color:#fff;font-size:clamp(18px,5.2vw,28px);line-height:1.25;letter-spacing:-.01em;isolation:isolate;overflow:hidden}
+.kp-after::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--lime);transform-origin:left;transform:scaleX(var(--fill,1))}
+.kp-after{color:var(--black)}
+.kp-after .ka{font-weight:600}
+.kp-after .kr{display:inline-block;padding:0 .15em;border-radius:.2em;background:var(--black);color:var(--lime);font-weight:600}
+.kp-meter{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+.kp-meter div{border-top:1px solid var(--line);padding-top:8px}
+.kp-meter b{display:block;font-size:clamp(30px,8.6vw,48px);font-weight:300;letter-spacing:-.04em;line-height:1}
+.kp-meter span{font-size:12px;color:var(--mute)}
+
+/* ---------- story stage ---------- */
+.stage{position:relative;border-radius:var(--r);background:#F6F8F7;box-shadow:inset 0 0 0 1px var(--line);padding:18px 12px 16px;overflow:hidden}
+.wall{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:26px 4px 10px}
+.wall::before{content:"";position:absolute;left:0;right:0;top:20px;height:4px;border-radius:2px;background:#D8DFDC}
+.bkc{position:relative;display:grid;justify-items:center;gap:6px}
+.bkc::before{content:"";width:2px;height:16px;background:#B7C0BC;margin-top:-22px}
+.bkc img{width:100%;aspect-ratio:16/10;object-fit:contain;border-radius:12px;background:var(--zircon);transition:box-shadow .3s}
+.bkc .bl{font-size:11px;color:var(--mute);letter-spacing:.04em}
+.bkc .mk{position:absolute;right:2px;top:-4px;display:grid;place-items:center;width:28px;height:28px;border-radius:50%;font-style:normal;font-size:15px;font-weight:700;color:#fff;background:var(--red);scale:0}
+.bkc.no .mk{scale:1}
+.bkc.yes img{box-shadow:0 0 0 3px var(--lime),0 14px 30px -14px rgba(121,207,30,.9)}
+.bkc.yes .mk{scale:1;background:var(--lime-d)}
+.bkc.yes .bl{color:var(--black);font-weight:600}
+.talk{position:relative;margin:14px 4px 0;padding:14px 16px;border-radius:18px 18px 18px 6px;background:#fff;box-shadow:0 10px 24px -18px rgba(0,0,0,.6);max-width:92%;min-height:96px}
+.talk.r{margin-left:auto;border-radius:18px 18px 6px 18px;background:var(--black);color:#fff}
+.talk .who{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);margin-bottom:4px}
+.talk b{display:block;font-size:18px;font-weight:500;line-height:1.3}
+.talk b mark{background:var(--lime);color:var(--black);padding:0 .15em;border-radius:.2em}
+.talk small{display:block;margin-top:4px;font-size:13px;color:var(--mute)}
+.st-dots{display:flex;gap:5px;margin:14px 4px 0}
+.st-dots i{flex:1;height:3px;border-radius:2px;background:#D8DFDC;transition:background .3s}
+.st-dots i.on{background:var(--black)}
+@media (min-width:900px){.stage{grid-column:1/-1}}
+
+/* ---------- verb-to-end grid ---------- */
+.klam{position:relative;margin-top:28px;border-radius:var(--r);background:var(--black);color:#fff;padding:18px 10px 18px;overflow:hidden}
+.kl-tabs{display:flex;gap:16px;padding:0 6px 14px}
+.kl-tabs button{border:0;background:none;color:#8A8F8D;padding:0 0 4px;font-size:15px;border-bottom:1.5px solid transparent}
+.kl-tabs button.on{color:#fff;border-color:var(--lime)}
+.kl-px,.kl-grid{display:grid;grid-template-columns:1.25fr .35fr 1fr 1.5fr 1.45fr}
+.kl-px span{font-size:9.5px;color:#8A8F8D;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:clip;padding-bottom:8px}
+.kl-grid{position:relative;min-height:92px;border-top:1px solid var(--line-w);border-bottom:1px solid var(--line-w)}
+.kl-grid .c{position:relative;display:flex;flex-wrap:wrap;align-content:center;justify-content:center;gap:4px;padding:10px 3px;font-size:clamp(13px,3.7vw,20px);line-height:1.2;text-align:center;border-left:1px solid var(--line-w)}
+.kl-grid .c:first-child{border-left:0}
+.kl-grid .c4{background:rgba(166,246,75,.07)}
+.kl-grid .t{display:inline-block}
+.kl-grid .pr{color:var(--black);background:var(--lime);padding:1px 5px;border-radius:6px;font-weight:600}
+.kl-grid .vb{color:var(--lime);font-weight:600}
+.kl-grid .vb.fin{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}
+.kl-grid .bad{color:var(--red)}
+.kl-ru{margin:14px 6px 0;font-size:13px;color:#8A8F8D}
+.kl-cap{margin:6px 6px 0;font-size:14.5px;line-height:1.5;color:#D4D9D7;min-height:44px}
+.kl-cap b{color:#fff;font-weight:500}
+@media (min-width:640px){.kl-px span{font-size:11px}}
+
+/* ---------- preposition flight ---------- */
+.pfl{margin-top:24px}
+.mg-line .x{color:var(--red)}
+
+/* ---------- bands ---------- */
+.band{position:relative;z-index:2;background:var(--lime);color:var(--black);rotate:-2deg;margin:0 -20px;padding:14px 0;overflow:hidden}
+.band.bk{background:var(--black);color:var(--lime);rotate:1.5deg}
+.band .track{display:flex;width:max-content;animation:mq 34s linear infinite}
+html.gs .band .track{animation:none}
+.band span{display:flex;align-items:center;gap:22px;padding-right:22px;font-size:clamp(26px,7vw,46px);letter-spacing:-.03em;text-transform:uppercase;white-space:nowrap}
+.band span i{width:12px;height:12px;border-radius:50%;background:currentColor;flex:none}
+@keyframes mq{to{transform:translateX(-50%)}}
+
 .rv{transition:translate .7s cubic-bezier(.2,.9,.3,1)}
 html.js:not(.gs) .rv:not(.in){translate:0 26px}
 .hcard{animation:hin 1.1s cubic-bezier(.2,1,.3,1) both}
@@ -602,6 +679,23 @@ html.js:not(.gs) .rv:not(.in){translate:0 26px}
   </div>
 </section>
 
+<!-- KOMPRESSOR -->
+<section id="komp" style="padding-top:0">
+  <div class="wrap">
+    <div class="komp rv" id="kompBox">
+      <div class="lab"><b>Компрессор</b><span class="br">3 → 1</span></div>
+      <div class="kp-before">
+        <p class="kp"><span>Ich habe</span> <span class="kd">ein Fahrrad</span>.</p>
+        <p class="kp"><span class="kd dup">Das Fahrrad</span> ist <span class="ka">grün</span>.</p>
+        <p class="kp">Ich mag <span class="kd dup">das Fahrrad</span>.</p>
+      </div>
+      <div class="kp-arrow"><svg class="ic"><use href="#i-arrow-down"/></svg></div>
+      <p class="kp-after" id="kpAfter">Ich mag das <span class="ka">grüne</span> Fahrrad, <span class="kr">das</span> ich habe.</p>
+      <div class="kp-meter"><div><b class="kpN" data-a="12" data-b="8">8</b><span>слов вместо 12</span></div><div><b class="kpN" data-a="3" data-b="1">1</b><span>точка вместо 3</span></div><div><b class="kpN" data-a="0" data-b="1">1</b><span>запятая</span></div></div>
+    </div>
+  </div>
+</section>
+
 <!-- MENU / CONTENTS -->
 <section style="padding-top:0">
   <div class="wrap">
@@ -617,6 +711,8 @@ html.js:not(.gs) .rv:not(.in){translate:0 26px}
     </nav>
   </div>
 </section>
+
+<div class="band" aria-hidden="true"><div class="track"><span>der <i></i> die <i></i> das <i></i> denen <i></i> dessen <i></i> deren <i></i></span><span>der <i></i> die <i></i> das <i></i> denen <i></i> dessen <i></i> deren <i></i></span></div></div>
 
 <!-- STORY -->
 <section id="story">
@@ -634,6 +730,16 @@ html.js:not(.gs) .rv:not(.in){translate:0 26px}
         <p>Продавец говорит, <span class="q">ah. Das Fahrrad, <span class="k">das in der Mitte hängt?</span></span> Тимур говорит, ja. Genau. Das.</p>
         <p>Велосипед он купил. Предложение за него построил продавец.</p>
         <p class="dry">«Das Fahrrad, das in der Mitte hängt». Семь слов. Тимур потратил на них десять минут и немного достоинства.</p>
+      </div>
+      <div class="stage rv" id="stage">
+        <div class="lab" style="margin:0 4px 0"><b>Сцена</b><span class="br">das · das · das</span></div>
+        <div class="wall">
+          <div class="bkc" data-b="0"><img src="../media/bike.webp" alt="Чёрный велосипед слева" loading="lazy"><span class="bl">links</span><i class="mk">×</i></div>
+          <div class="bkc" data-b="1"><img src="../media/bike.webp" alt="Чёрный велосипед посередине" loading="lazy"><span class="bl">in der Mitte</span><i class="mk">✓</i></div>
+          <div class="bkc" data-b="2"><img src="../media/bike.webp" alt="Чёрный велосипед справа" loading="lazy"><span class="bl">rechts</span><i class="mk">×</i></div>
+        </div>
+        <div class="talk" id="talk"><span class="who" id="tWho">Тимур</span><b id="tDe">Ich möchte das Fahrrad.</b><small id="tRu">Я хочу велосипед.</small></div>
+        <div class="st-dots" id="stDots"><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
       </div>
     </div>
   </div>
@@ -778,12 +884,34 @@ html.js:not(.gs) .rv:not(.in){translate:0 26px}
   </div>
 </section>
 
+<!-- VERB TO END -->
+<section id="klammer" style="padding-top:10px">
+  <div class="wrap">
+    <div class="lab"><b>Grid system</b><span class="br">Verb → Ende</span></div>
+    <h2 class="h split">Глагол <span class="gr">всегда</span> <span class="lm">последний</span></h2>
+    <p class="lede">Даже если глаголов два. <b>Спрягаемый уезжает в самый хвост</b>, после причастия и инфинитива. <span class="lt">Переключай время и смотри на последнюю колонку.</span></p>
+    <div class="klam rv" id="klam">
+      <div class="kl-tabs" role="tablist"><button type="button" class="on" data-k="0">Präsens</button><button type="button" data-k="1">Perfekt</button><button type="button" data-k="2">Modalverb</button></div>
+      <div class="kl-px"><span>[ Wort ]</span><span>[ , ]</span><span>[ Pron. ]</span><span>[ Mitte ]</span><span>[ Verb ]</span></div>
+      <div class="kl-grid" id="klGrid"></div>
+      <p class="kl-ru" id="klRu"></p>
+      <p class="kl-cap" id="klCap"></p>
+    </div>
+  </div>
+</section>
+
 <!-- PREPOSITIONS + WAS/WO -->
 <section id="preps" style="padding-top:20px">
   <div class="wrap">
     <div class="lab"><b>Предлоги и исключения</b><span class="br">in der · mit dem · was · wo</span></div>
     <h2 class="h split">Предлог <span class="gr">едет</span> <span class="lm">первым</span></h2>
     <p class="lede">Как в русском: «город, <b>в котором</b>», а не «который в». <span class="lt">Падеж тогда выбирает предлог.</span></p>
+    <div class="merge pfl rv" id="pfl" role="button" tabindex="0" aria-label="Следующий шаг: предлог">
+      <div class="mg-step"><span>Полёт предлога</span><b id="pfSt">Шаг 1</b></div>
+      <div class="mg-line" id="pfLine" aria-live="polite"></div>
+      <p class="mg-cap" id="pfCap"></p>
+      <div class="mg-dots" id="pfDots"><i class="on"></i><i></i><i></i><i></i></div>
+    </div>
     <div class="bcards">
       <div class="bc lm rv"><div class="tp"><b>in der</b><small>in + Dativ<br>die Stadt</small></div><div class="ex">Die Stadt, <mark>in der</mark> ich wohne.<small>Город, в котором я живу.</small></div><button class="say" type="button" data-say="Die Stadt, in der ich wohne." aria-label="Озвучить"><svg><use href="#spk"/></svg></button></div>
       <div class="bc bk rv"><div class="tp"><b>mit dem</b><small>mit + Dativ<br>der Freund</small></div><div class="ex">Der Freund, <mark>mit dem</mark> ich fahre.<small>Друг, с которым я катаюсь.</small></div><button class="say" type="button" data-say="Der Freund, mit dem ich fahre." aria-label="Озвучить"><svg><use href="#spk"/></svg></button></div>
@@ -811,6 +939,8 @@ html.js:not(.gs) .rv:not(.in){translate:0 26px}
     </div>
   </div>
 </section>
+
+<div class="band bk" aria-hidden="true"><div class="track"><span>Komma <i></i> Pronomen <i></i> Mittelfeld <i></i> Verb → Ende <i></i></span><span>Komma <i></i> Pronomen <i></i> Mittelfeld <i></i> Verb → Ende <i></i></span></div></div>
 
 <!-- QUIZ -->
 <section id="quiz" style="padding-top:20px">
@@ -1229,6 +1359,147 @@ function relInit(){
     }
     fA.addEventListener('change', upd); fB.addEventListener('change', upd); upd();
   })();
+
+  /* ---------- shared FLIP: re-render tokens, fly the ones that moved ---------- */
+  function flipTo(box, html){
+    var prev = {};
+    $$('.t[data-k]', box).forEach(function(t){ var r = t.getBoundingClientRect(); prev[t.dataset.k] = {x:r.left, y:r.top}; });
+    box.innerHTML = html;
+    if(!anim) return;
+    $$('.t[data-k]', box).forEach(function(t){
+      var p = prev[t.dataset.k], r = t.getBoundingClientRect();
+      if(!p){ G.from(t, {y:26, scale:.6, duration:.6, ease:'back.out(2.5)'}); return; }
+      var dx = p.x - r.left, dy = p.y - r.top;
+      if(Math.abs(dx) + Math.abs(dy) < 2) return;
+      if(MP && (t.classList.contains('vb') || t.classList.contains('pr'))) G.fromTo(t, {x:dx, y:dy}, {motionPath:{path:[{x:dx,y:dy},{x:dx/2,y:Math.min(dy,0)-56},{x:0,y:0}], curviness:1.4}, duration:1.1, ease:'power2.inOut'});
+      else G.fromTo(t, {x:dx, y:dy}, {x:0, y:0, duration:.8, ease:'power3.inOut'});
+    });
+  }
+  function K(k, t, c){ return '<span class="t' + (c ? ' ' + c : '') + '" data-k="' + k + '">' + t + '</span>'; }
+
+  /* ---------- compressor: three sentences squeeze into one (scroll-scrubbed) ---------- */
+  (function(){
+    var box = $('#kompBox'); if(!box || !anim) return;
+    var rows = $$('.kp', box), dups = $$('.dup', box), after = $('#kpAfter'), nums = $$('.kpN', box);
+    nums.forEach(function(n){ n.textContent = n.dataset.a; });
+    var tl = G.timeline({scrollTrigger:{trigger:box, start:'top 75%', end:'bottom 45%', scrub:.7}});
+    tl.to(dups, {color:'#B5BCB9', textDecorationLine:'line-through', duration:.3})
+      .to(rows[1], {y:function(){ return -(rows[1].offsetTop - rows[0].offsetTop) * .7; }, scale:.92, opacity:.35, duration:.5}, .3)
+      .to(rows[2], {y:function(){ return -(rows[2].offsetTop - rows[0].offsetTop) * .8; }, scale:.88, opacity:.3, duration:.5}, .35)
+      .to(box.querySelector('.kp-arrow'), {y:function(){ return -(rows[2].offsetTop - rows[0].offsetTop) * .45; }, scale:1.8, color:'#79CF1E', duration:.5}, .35)
+      .fromTo(after, {'--fill':0, scale:.9, color:'#fff'}, {'--fill':1, scale:1, color:'#000', duration:.6, ease:'power2.out'}, .55)
+      .fromTo('#kpAfter .kr', {scale:.4, rotation:-12}, {scale:1, rotation:0, duration:.3, ease:'back.out(3)'}, .9);
+    nums.forEach(function(n){
+      var o = {v:+n.dataset.a};
+      tl.to(o, {v:+n.dataset.b, duration:.5, onUpdate:function(){ n.textContent = Math.round(o.v); }}, .55);
+    });
+  })();
+
+  /* ---------- story stage: three bikes, one relative clause ---------- */
+  (function(){
+    var st = $('#stage'); if(!st) return;
+    var bikes = $$('.bkc', st), talk = $('#talk'), dots = $$('#stDots i'), k = 0, timer = null, running = false;
+    var S = [
+      {w:'Тимур', de:'Ich möchte das Fahrrad.', ru:'Я хочу велосипед.', a:null},
+      {w:'Продавец', de:'Welches?', ru:'Какой?', r:1, a:null},
+      {w:'Тимур', de:'Das.', ru:'Этот. (Продавец снимает левый.)', a:[0,'no']},
+      {w:'Тимур', de:'Nein. Das.', ru:'Нет. Этот. (Продавец снимает правый.)', a:[2,'no']},
+      {w:'Тимур', de:'Das Fahrrad. Schwarz. Mitte. Grün. Hier.', ru:'Велосипед. Чёрный. Середина. Зелёный. Здесь.', a:'shake'},
+      {w:'Продавец', de:'Ah. Das Fahrrad, <mark>das in der Mitte hängt?</mark>', ru:'А, велосипед, который висит посередине?', r:1, a:[1,'yes']},
+      {w:'Тимур', de:'Ja. Genau. Das.', ru:'Да. Точно. Этот.', a:'keep'}
+    ];
+    function show(i){
+      k = i; var d = S[i];
+      if(i === 0) bikes.forEach(function(b){ b.classList.remove('no','yes'); if(anim) G.set(b, {y:0, rotation:0}); });
+      talk.classList.toggle('r', !!d.r);
+      $('#tWho').textContent = d.w; $('#tDe').innerHTML = d.de; $('#tRu').textContent = d.ru;
+      dots.forEach(function(x,j){ x.classList.toggle('on', j<=i); });
+      if(Array.isArray(d.a)){
+        var b = bikes[d.a[0]]; b.classList.add(d.a[1]);
+        if(anim){
+          if(d.a[1] === 'no') G.timeline().to(b, {y:-18, rotation:-4, duration:.35, ease:'power2.out'}).to(b, {y:0, rotation:0, duration:.6, ease:'bounce.out'});
+          else G.fromTo(b, {scale:.9}, {scale:1.08, duration:.6, ease:'elastic.out(1,.4)', yoyo:true, repeat:1});
+          G.fromTo($('.mk', b), {scale:0, rotation:-90}, {scale:1, rotation:0, duration:.5, ease:'back.out(3)'});
+        }
+      } else if(d.a === 'shake' && anim){
+        G.fromTo(bikes, {x:-5}, {x:0, duration:.6, ease:'elastic.out(1.2,.2)', stagger:.08});
+      }
+      if(anim) G.fromTo(talk, {y:16, scale:.96}, {y:0, scale:1, duration:.5, ease:'back.out(2.2)'});
+    }
+    if(reduce || !('IntersectionObserver' in window)){ bikes[0].classList.add('no'); bikes[2].classList.add('no'); show(5); return; }
+    show(0);
+    function loop(){ timer = setTimeout(function(){ if(!running) return; show((k+1) % S.length); loop(); }, k === 5 ? 3600 : 2200); }
+    whenVisible(st, function(){ if(running) return; running = true; loop(); }, function(){ running = false; clearTimeout(timer); }, .35);
+    st.addEventListener('click', function(){ clearTimeout(timer); show((k+1) % S.length); if(running) loop(); });
+  })();
+
+  /* ---------- verb-to-end grid ---------- */
+  (function(){
+    var grid = $('#klGrid'); if(!grid) return;
+    var D = [
+      {mid:'ich jeden Tag', v:[['v1','sehe','fin']], ru:'мужчина, которого я вижу каждый день', c:'Один глагол: <b>sehe</b> едет в последнюю колонку.'},
+      {mid:'ich gestern', v:[['v1','gesehen',''],['v2','habe','fin']], ru:'мужчина, которого я видел вчера', c:'Два глагола: <b>habe</b> перепрыгивает через gesehen и встаёт последним.'},
+      {mid:'ich morgen', v:[['v1','sehen',''],['v2','will','fin']], ru:'мужчина, которого я хочу увидеть завтра', c:'Модальный <b>will</b> тоже в самом конце, после инфинитива.'}
+    ];
+    var cur = 0, st = 0, timer = null, running = false, manual = false;
+    function html(d, wrong){
+      // wrong = main-clause order: finite verb right after the pronoun, the rest at the end
+      var fin = d.v[d.v.length-1], rest = d.v.slice(0, -1);
+      var finH = K(fin[0], fin[1], 'vb fin' + (wrong ? ' bad' : '')), restH = rest.map(function(v){ return K(v[0], v[1], 'vb'); }).join(' ');
+      var mid = d.mid.split(' ').map(function(w,i){ return K('m'+i, w); }).join(' ');
+      return '<div class="c c0">' + K('w0','der') + ' ' + K('w1','Mann') + '</div><div class="c c1">' + K('cm',',') + '</div><div class="c c2">' + K('p','den','pr') + '</div>' +
+        '<div class="c c3">' + (wrong ? finH + ' ' : '') + mid + '</div><div class="c c4">' + restH + (wrong ? '' : ' ' + finH) + '</div>';
+    }
+    function show(i, s){
+      cur = i; st = s; var d = D[i];
+      $$('.kl-tabs button').forEach(function(b,j){ b.classList.toggle('on', j===i); });
+      flipTo(grid, html(d, s === 0));
+      $('#klRu').textContent = d.ru;
+      $('#klCap').innerHTML = s === 0 ? '<b>Так нельзя.</b> Это порядок главного предложения: спрягаемый глагол на втором месте.' : d.c;
+    }
+    $$('.kl-tabs button').forEach(function(b){ b.addEventListener('click', function(){ manual = true; clearTimeout(timer); show(+b.dataset.k, 0); setTimeout(function(){ show(+b.dataset.k, 1); }, 900); }); });
+    show(0, reduce ? 1 : 0);
+    function loop(){ timer = setTimeout(function(){ if(!running || manual) return; if(st === 0) show(cur, 1); else show((cur+1) % D.length, 0); loop(); }, st === 0 ? 1400 : 3200); }
+    if(!reduce) whenVisible($('#klam'), function(){ if(running) return; running = true; loop(); }, function(){ running = false; clearTimeout(timer); }, .35);
+  })();
+
+  /* ---------- preposition flight ---------- */
+  (function(){
+    var box = $('#pfl'); if(!box) return;
+    var line = $('#pfLine');
+    var S = [
+      {h:[K('a','Die'),K('b','Stadt'),K('p',','),K('d','der','pr'),K('e','ich'),K('f','wohne','vb'),K('g','in','x'),K('q','.')], c:'Как в английском: <b>the city I live in</b>. По-немецки предлог в хвосте не живёт.'},
+      {h:[K('a','Die'),K('b','Stadt'),K('p',',','cm'),K('g','in','pr'),K('d','der','pr'),K('e','ich'),K('f','wohne','vb'),K('q','.')], c:'Предлог едет первым: <b>in der</b>. Как русское «в котором».'},
+      {h:[K('a2','Der'),K('b2','Freund'),K('p',',','cm'),K('g2','mit','pr'),K('d2','dem','pr'),K('e','ich'),K('f2','fahre','vb'),K('q','.')], c:'<b>mit</b> всегда с Dativ: der Freund → <b>dem</b>.'},
+      {h:[K('a3','Die'),K('b3','Leute'),K('p',',','cm'),K('g3','für','pr'),K('d3','die','pr'),K('e','ich'),K('f3','koche','vb'),K('q','.')], c:'<b>für</b> всегда с Akkusativ: die Leute → <b>die</b>.'}
+    ];
+    var k = 0, timer = null, running = false;
+    function show(i){
+      k = i; flipTo(line, S[i].h.join(' '));
+      $('#pfCap').innerHTML = S[i].c; $('#pfSt').textContent = 'Шаг ' + (i+1);
+      $$('#pfDots i').forEach(function(x,j){ x.classList.toggle('on', j<=i); });
+    }
+    show(reduce ? 1 : 0);
+    function loop(){ timer = setTimeout(function(){ if(!running) return; show((k+1) % S.length); loop(); }, k === 0 ? 2400 : 3000); }
+    box.addEventListener('click', function(){ clearTimeout(timer); show((k+1) % S.length); if(running) loop(); });
+    box.addEventListener('keydown', function(e){ if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); box.click(); } });
+    if(!reduce) whenVisible(box, function(){ if(running) return; running = true; loop(); }, function(){ running = false; clearTimeout(timer); }, .3);
+  })();
+
+  /* ---------- specimen: variable weight follows the scroll ---------- */
+  if(anim) G.fromTo('.spec-l .big', {fontWeight:300}, {fontWeight:700, ease:'none', scrollTrigger:{trigger:'.spec-l', start:'top 85%', end:'bottom 35%', scrub:.6}});
+
+  /* ---------- marquee bands react to scroll speed ---------- */
+  if(anim){
+    $$('.band .track').forEach(function(t, i){
+      var tw = G.fromTo(t, {xPercent: i ? -50 : 0}, {xPercent: i ? 0 : -50, repeat:-1, ease:'none', duration:30});
+      ScrollTrigger.create({trigger:t.parentNode, start:'top bottom', end:'bottom top', onUpdate:function(self){
+        var v = self.getVelocity(), s = G.utils.clamp(-8, 8, v/300);
+        G.to(tw, {timeScale:1 + Math.abs(v)/500, duration:.3, overwrite:true}); G.to(tw, {timeScale:1, duration:1.2, delay:.3});
+        G.to(t, {skewX:-s, duration:.3, overwrite:'auto'}); G.to(t, {skewX:0, duration:.8, delay:.2});
+      }});
+    });
+  }
 
   /* ---------- videos ---------- */
   var pio = 'IntersectionObserver' in window ? new IntersectionObserver(function(es){ es.forEach(function(en){ if(en.isIntersecting){ var v = en.target; if(v.dataset.poster){ v.poster = v.dataset.poster; } pio.unobserve(v); } }); }, {rootMargin:'900px 0px'}) : null;
