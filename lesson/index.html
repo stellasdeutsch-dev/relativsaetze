@@ -1,0 +1,1258 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Relativsätze по-человечески: der, die, das как русское «который». Схемы, конструктор, склейка предложений, тест. Интерактивный гайд Stellas.">
+<meta property="og:title" content="Relativsätze: der, die, das вместо «который»">
+<meta property="og:description" content="Relativsätze по-человечески: der, die, das как русское «который». Схемы, конструктор, склейка предложений, тест. Интерактивный гайд Stellas.">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="../media/logo.webp">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}</style>
+<title>Relativsätze: der, die, das вместо «который»</title>
+<link rel="preload" href="../assets/fonts/albertsans-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<style>@font-face {
+  font-family: 'Albert Sans';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url(../assets/fonts/albertsans-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Onest';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url(../assets/fonts/onest-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: 'Onest';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url(../assets/fonts/onest-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<script defer src="../assets/gsap-bundle.min.js"></script>
+
+<style>
+:root{
+  color-scheme: light;
+  --black:#000; --ink:#0B0B0B; --ink-2:#3A3D3C; --mute:#8A8F8D; --white:#fff;
+  --zircon:#EDF2F0; --zircon-2:#E1E8E5; --lime:#A6F64B; --lime-d:#79CF1E; --blue:#5D9CD2; --red:#FF5A4E;
+  --line:rgba(0,0,0,.12); --line-w:rgba(255,255,255,.16);
+  --gut:16px; --r:24px;
+  --f:'Albert Sans','Onest',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--white);color:var(--ink);font:400 16px/1.55 var(--f);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,video{max-width:100%;display:block}
+a{color:inherit}
+button{font:inherit;color:inherit;cursor:pointer}
+main{overflow-x:clip}
+.wrap{max-width:1180px;margin:0 auto;padding:0 var(--gut)}
+section{position:relative;padding:76px 0}
+.ic{width:1.1em;height:1.1em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none;vertical-align:-.18em}
+
+/* ---------- type ---------- */
+.h{font-weight:400;text-transform:uppercase;letter-spacing:-.035em;line-height:.92;margin:0}
+h2.h{font-size:clamp(38px,11vw,104px)}
+h3.h{font-size:clamp(28px,7.6vw,56px)}
+.h .wd{display:inline-block}
+.h .gr{color:var(--mute)}
+.h .lm{color:var(--lime-d)}
+.dark .h .lm,.h.on-dark .lm{color:var(--lime)}
+.lab{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:13px;letter-spacing:.02em;color:var(--mute);margin:0 0 18px}
+.lab b{font-weight:500;color:var(--ink)}
+.dark .lab b{color:#fff}
+.br{font-size:12px;letter-spacing:.01em;white-space:nowrap}
+.br::before{content:"[ "}.br::after{content:" ]"}
+.lede{font-size:clamp(16px,4.3vw,21px);line-height:1.5;color:var(--ink-2);max-width:38ch;margin:18px 0 0}
+.lede b{color:var(--ink);font-weight:500}
+.lede .lt{color:var(--mute)}
+.dark .lede{color:#B9BFBD}.dark .lede b{color:#fff}
+.de{font-weight:600}
+.k{display:inline-block;padding:0 .3em;border-radius:.3em;background:var(--lime);color:var(--black);font-weight:600}
+.k.bl{background:var(--black);color:var(--lime)}
+.k.zi{background:var(--zircon)}
+
+/* ---------- links & buttons ---------- */
+.go{display:inline-flex;align-items:center;gap:10px;padding-bottom:6px;border-bottom:1.5px solid currentColor;text-decoration:none;text-transform:uppercase;font-size:clamp(16px,4.4vw,22px);letter-spacing:-.01em;transition:gap .25s}
+.go svg{width:1.1em;height:1.1em}
+.go:hover{gap:16px}
+.pill{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 16px;border-radius:999px;border:0;background:var(--black);color:#fff;text-decoration:none;font-size:13px;font-weight:500;white-space:nowrap}
+.pill.lm{background:var(--lime);color:var(--black)}
+.pill.wt{background:#fff;color:var(--black)}
+.pill.ol{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px currentColor}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 26px;border-radius:999px;border:0;background:var(--lime);color:var(--black);text-decoration:none;font-size:15px;font-weight:600;text-transform:uppercase;letter-spacing:.02em;transition:scale .2s, background .2s}
+.btn:hover{scale:1.03}.btn:active{scale:.97}
+.btn.bk{background:var(--black);color:#fff}
+.btn.wt{background:#fff;color:var(--black)}
+.btn.wide{width:100%}
+.say{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;border:0;background:var(--black);color:var(--lime);flex:none;transition:scale .2s, background .2s}
+.say svg{width:15px;height:15px}
+.say.on{background:var(--lime);color:var(--black);scale:1.1}
+.dark .say,.lime-card .say{background:var(--lime);color:var(--black)}
+html.no-tts .say{display:none}
+.dot{display:inline-block;width:12px;height:12px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 4px rgba(166,246,75,.25);flex:none}
+
+/* ---------- route squiggle ---------- */
+.squig{position:absolute;pointer-events:none;overflow:visible}
+.squig path{fill:none;stroke:var(--lime);stroke-width:2.2;stroke-linejoin:round;stroke-linecap:round;vector-effect:non-scaling-stroke}
+
+/* ---------- topbar ---------- */
+.topbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);border-bottom:1px solid var(--line)}
+@media (min-width:900px){.topbar{backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);background:rgba(255,255,255,.8)}}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:10px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand img{width:28px;height:28px}
+.brand b{font-weight:500;font-size:16px;letter-spacing:-.01em}
+.brand i{font-style:normal;color:var(--mute);font-size:13px}
+.tb-r{display:flex;align-items:center;gap:12px}
+.tb-r .tl{font-size:13px;text-decoration:underline;text-underline-offset:4px}
+.prog{position:absolute;left:0;bottom:-1px;height:2px;width:100%;background:var(--lime);transform-origin:left;transform:scaleX(0)}
+
+/* ---------- hero ---------- */
+.hero{padding:14px 0 40px}
+.hcard{position:relative;border-radius:28px;overflow:hidden;background:#8fb3c9;min-height:min(86vh,720px);isolation:isolate;color:#fff}
+.hcard picture,.hcard>img{position:absolute;inset:0;z-index:-2}
+.hcard img{width:100%;height:100%;object-fit:cover;object-position:28% 40%}
+.hcard::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,0) 30%,rgba(0,0,0,.05) 55%,rgba(0,0,0,.55))}
+.h-nav{position:absolute;left:16px;right:16px;top:16px;display:flex;justify-content:space-between;align-items:center}
+.h-nav .pill{height:34px;font-size:12px}
+.h-title{margin:0;font:inherit;position:absolute;left:14px;right:14px;bottom:146px;display:flex;flex-direction:column;gap:2px}
+.h-title .h{font-size:clamp(54px,17.4vw,190px);text-shadow:0 6px 30px rgba(0,0,0,.18)}
+.h-title .h:last-child{align-self:flex-end}
+.h-tags{position:absolute;left:16px;right:16px;bottom:112px;display:flex;justify-content:space-between;gap:6px;flex-wrap:nowrap;overflow:hidden}
+.h-tags .br{color:rgba(255,255,255,.92);font-size:10.5px}
+@media (min-width:640px){.h-tags .br{font-size:12px}}
+.h-bot{position:absolute;left:14px;right:14px;bottom:16px;display:flex;justify-content:space-between;align-items:flex-end;gap:12px}
+.mini{display:flex;gap:10px;align-items:center;padding:8px;border-radius:16px;background:rgba(166,246,75,.22);box-shadow:inset 0 0 0 1px rgba(255,255,255,.25);max-width:220px}
+@media (min-width:900px){.mini{backdrop-filter:blur(10px)}}
+.mini img{width:64px;height:64px;border-radius:10px;object-fit:cover}
+.mini b{display:block;font-size:22px;font-weight:400;line-height:1;white-space:nowrap}
+.mini small{display:block;font-size:10.5px;line-height:1.3;opacity:.9}
+.h-bot .go{color:#fff;font-size:clamp(15px,4vw,22px)}
+.h-under{display:grid;gap:16px;margin-top:22px}
+.h-under p{margin:0;font-size:clamp(17px,4.6vw,24px);line-height:1.4;letter-spacing:-.01em;max-width:30ch}
+.h-under p .lt{color:var(--mute)}
+@media (min-width:900px){.h-under{grid-template-columns:1.2fr 1fr;align-items:end}.h-title{bottom:auto;top:24%}.h-tags{bottom:120px}}
+
+/* ---------- problem / solution ---------- */
+.ps{display:grid;gap:14px}
+.card{border-radius:var(--r);padding:24px 20px}
+.card.bk{background:var(--black);color:#fff}
+.card.lm,.lime-card{background:var(--lime);color:var(--black)}
+.card.zi{background:var(--zircon)}
+.card .cap{margin:0 0 18px;font-size:15px;font-weight:500}
+.card p.big{margin:0;font-size:clamp(19px,5.2vw,28px);line-height:1.3;letter-spacing:-.01em}
+.card p.big + p.big{margin-top:12px}
+.card .robo{display:block;margin-top:14px;font-size:14px;line-height:1.6;color:#B9BFBD}
+.card .robo b{color:#fff;font-weight:500}
+.ps-phone{position:relative;border-radius:var(--r);background:var(--zircon);overflow:hidden;min-height:420px;display:grid;place-items:center}
+.ph{position:relative;width:min(230px,62vw);aspect-ratio:9/19;border-radius:38px;padding:8px;background:#1a1a1a;box-shadow:0 30px 60px -28px rgba(0,0,0,.7);rotate:-8deg}
+.ph .scr{position:relative;width:100%;height:100%;border-radius:31px;overflow:hidden;background:#000}
+.ph .scr img{width:100%;height:100%;object-fit:cover;object-position:30% center}
+.ph .scr .t{position:absolute;left:14px;right:14px;top:24%;font-size:34px;line-height:.95;text-transform:uppercase;color:#fff;letter-spacing:-.03em}
+.ph .scr .t span{display:block;text-align:right}
+.ph .scr .jr{position:absolute;left:14px;right:14px;bottom:18px;display:flex;justify-content:space-between;color:#fff;font-size:12px;text-transform:uppercase;border-bottom:1px solid #fff;padding-bottom:4px}
+@media (min-width:900px){.ps{grid-template-columns:1fr 1fr;grid-template-rows:auto auto}.ps-phone{grid-row:span 2;grid-column:2}}
+
+/* ---------- lime menu (contents) ---------- */
+.menu{position:relative;border-radius:var(--r);background:var(--lime);padding:20px;overflow:hidden}
+.menu-top{display:flex;justify-content:space-between;align-items:center;font-size:12px}
+.menu-top .brand b{font-size:15px}
+.menu-cols{display:grid;grid-template-columns:1fr 1fr;gap:26px 16px;margin:34px 0 26px}
+.menu-cols h4{margin:0 0 10px;font-weight:400;font-size:clamp(26px,7vw,46px);line-height:1;letter-spacing:-.03em;text-transform:uppercase}
+.menu-cols a{display:block;font-size:15px;line-height:1.7;text-decoration:none}
+.menu-cols a:hover{text-decoration:underline}
+.menu-bot{display:flex;justify-content:space-between;gap:10px;font-size:11px;border-top:1px solid rgba(0,0,0,.2);padding-top:12px}
+@media (min-width:900px){.menu-cols{grid-template-columns:repeat(4,1fr)}}
+
+/* ---------- story ---------- */
+.story-grid{display:grid;gap:18px;margin-top:28px}
+.st-photo{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:4/3.4}
+.st-photo img{width:100%;height:100%;object-fit:cover;object-position:35% center}
+.st-photo .tag{position:absolute;left:12px;bottom:12px;right:12px;display:flex;justify-content:space-between;align-items:center;gap:8px;padding:10px 12px;border-radius:14px;background:rgba(255,255,255,.9);font-size:12px}
+.st-photo .tag b{font-weight:500}
+.st-text p{margin:0 0 14px;font-size:17px;line-height:1.6}
+.st-text p.dry{margin-top:20px;padding-top:16px;border-top:1px solid var(--line);color:var(--ink-2)}
+.st-text .q{font-weight:600}
+@media (min-width:900px){.story-grid{grid-template-columns:1fr 1fr;align-items:start}}
+
+/* ---------- ru = de ---------- */
+.mirror{margin-top:28px;border-radius:var(--r);background:var(--black);color:#fff;padding:20px 16px;overflow:hidden}
+.mir-head{display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:12px;color:var(--mute);padding-bottom:10px;border-bottom:1px solid var(--line-w)}
+.mir-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:14px 0;border-bottom:1px solid var(--line-w);align-items:center}
+.mir-row:last-child{border-bottom:0}
+.mir-row .ru,.mir-row .dd{font-size:clamp(15px,4.2vw,20px);line-height:1.35}
+.mir-row .ru b{color:var(--lime);font-weight:500}
+.mir-row .dd b{display:inline-block;color:var(--black);background:var(--lime);padding:0 .3em;border-radius:.25em;font-weight:600}
+.mir-row .dd small,.mir-row .ru small{display:block;font-size:11.5px;color:var(--mute)}
+.mir-row.on{background:rgba(166,246,75,.06)}
+.mir-note{margin-top:16px;font-size:14px;line-height:1.5;color:#B9BFBD}
+.mir-note b{color:#fff}
+
+/* ---------- route diagram ---------- */
+.dark{background:var(--black);color:#fff}
+.road-bg{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.92),rgba(0,0,0,.75) 40%,rgba(0,0,0,.95)),url(../media/road.webp) center/cover no-repeat;z-index:0}
+.dark .wrap{position:relative;z-index:1}
+.route{position:relative;margin-top:30px;border-radius:var(--r);border:1px solid var(--line-w);background:rgba(0,0,0,.55);padding:18px 14px 22px;overflow:hidden}
+.route-svg{display:block;width:100%;height:auto;overflow:visible}
+.route-svg .rd{fill:none;stroke:#2B2B2B;stroke-width:26;stroke-linecap:round}
+.route-svg .rd2{fill:none;stroke:#2B2B2B;stroke-width:20;stroke-linecap:round}
+.route-svg .ln{fill:none;stroke:var(--lime);stroke-width:2.4;stroke-dasharray:6 8;stroke-linecap:round}
+.route-svg .ref{fill:none;stroke:var(--lime);stroke-width:2;stroke-dasharray:3 5}
+.route-svg text{font-family:var(--f);fill:#fff;font-size:15px}
+.route-svg .t-de{font-size:17px;font-weight:500}
+.route-svg .t-pr{fill:var(--black);font-weight:700}
+.route-svg .t-vb{fill:var(--lime);font-weight:600;font-size:22px}
+.route-svg .t-sm{font-size:10.5px;fill:#8A8F8D;letter-spacing:.04em}
+.route-svg .chip{fill:var(--lime)}
+.route-svg .flag{fill:var(--lime)}
+.route-svg .rider{fill:#fff}
+.route-steps{display:grid;gap:8px;margin-top:16px}
+.rs{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:start;padding:10px 12px;border-radius:14px;background:rgba(255,255,255,.04);font-size:14px;line-height:1.45;color:#B9BFBD;transition:background .3s,color .3s}
+.rs i{font-style:normal;display:grid;place-items:center;width:28px;height:28px;border-radius:50%;border:1px solid var(--line-w);font-size:12px;color:#fff}
+.rs b{color:#fff;font-weight:500}
+.rs.on{background:rgba(166,246,75,.12);color:#fff}
+.rs.on i{background:var(--lime);color:var(--black);border-color:var(--lime)}
+@media (min-width:900px){.route-steps{grid-template-columns:repeat(4,1fr)}}
+
+/* ---------- builder (app-like) ---------- */
+.app-wrap{display:grid;gap:18px;margin-top:30px}
+.app{border-radius:30px;background:#fff;box-shadow:0 30px 60px -30px rgba(0,0,0,.45), inset 0 0 0 1px var(--line);padding:20px 16px 18px;overflow:hidden}
+.app-h{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.app-h b{font-size:22px;font-weight:400;text-transform:uppercase;letter-spacing:-.02em}
+.app-h .who{display:flex;align-items:center;gap:8px;padding:5px 12px 5px 5px;border-radius:999px;background:var(--zircon);font-size:12px;line-height:1.1}
+.app-h .who img{width:30px;height:30px;border-radius:50%;object-fit:cover}
+.app-h .who small{display:block;color:var(--mute);font-size:10px}
+.tabs{display:flex;gap:16px;margin:18px 0 0;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+.tabs::-webkit-scrollbar{display:none}
+.tabs button{border:0;background:none;padding:0 0 4px;font-size:15px;color:var(--ink-2);white-space:nowrap;border-bottom:1.5px solid transparent;transition:color .2s,border-color .2s}
+.tabs button.on{color:var(--black);border-color:var(--black);font-weight:500}
+.tabs.role{margin-top:12px}
+.tabs.role button{font-size:13px}
+.srch{display:flex;align-items:center;gap:10px;margin-top:16px;padding:12px 14px;border-radius:999px;background:var(--zircon);font-size:14px;color:var(--ink-2)}
+.srch .dot{margin-left:auto}
+.res{position:relative;margin-top:16px;border-radius:22px;overflow:hidden;min-height:220px;padding:18px;color:#fff;background:#1b1b1b center/cover no-repeat;isolation:isolate}
+.res::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(0,0,0,.25),rgba(0,0,0,.78))}
+.res .pr{font-size:clamp(64px,19vw,120px);line-height:.9;letter-spacing:-.04em;text-transform:lowercase;color:var(--lime);display:inline-block}
+.res .ex{margin-top:12px;font-size:17px;line-height:1.4;font-weight:500}
+.res .ex mark{background:var(--lime);color:var(--black);padding:0 .2em;border-radius:.2em}
+.res .ex em{font-style:normal;color:var(--lime)}
+.res .tr{margin-top:6px;font-size:13px;color:#D4D9D7}
+.res .say{position:absolute;right:14px;top:14px}
+.res .why{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}
+.res .why span{font-size:11px;padding:5px 9px;border-radius:999px;background:rgba(255,255,255,.14)}
+.callouts{display:grid;gap:14px}
+.co{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start}
+.co .dot{margin-top:6px}
+.co h4{margin:0 0 4px;font-size:20px;font-weight:400;letter-spacing:-.01em}
+.co p{margin:0;font-size:14.5px;line-height:1.5;color:var(--ink-2)}
+@media (min-width:900px){.app-wrap{grid-template-columns:minmax(360px,440px) 1fr;align-items:center;gap:40px}.co{position:relative}.co::before{content:"";position:absolute;right:100%;top:12px;width:40px;height:1px;background:var(--lime-d)}}
+
+/* ---------- grid system table ---------- */
+.gridsys{position:relative;margin-top:30px;border-radius:var(--r);background:#0d0d0d;padding:16px 10px 18px;overflow:hidden}
+.gs-px{display:grid;grid-template-columns:62px repeat(4,1fr);font-size:10.5px;color:var(--mute);padding:0 2px 10px;text-align:center}
+.gs-tbl{position:relative;display:grid;grid-template-columns:62px repeat(4,1fr)}
+.gs-tbl::before{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(90deg,transparent 0 calc(25% - 1px),rgba(255,255,255,.1) calc(25% - 1px) 25%);left:62px}
+.gs-tbl > div{min-height:62px;display:flex;align-items:center;justify-content:center;border-top:1px solid var(--line-w);font-size:clamp(15px,4.3vw,26px);letter-spacing:-.02em;color:#fff}
+.gs-tbl .rh{justify-content:flex-start;font-size:11px;letter-spacing:.02em;color:var(--mute)}
+.gs-tbl .ch{font-size:11.5px;color:#B9BFBD;border-top:0;min-height:36px}
+.gs-tbl .x{color:var(--black)}
+.gs-tbl .x span{display:inline-block;padding:2px 5px;border-radius:7px;background:var(--lime)}
+.gs-tbl .fl{position:relative;display:inline-grid}
+.gs-tbl .fl > *{grid-area:1/1}
+.gs-legend{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:14px;font-size:12.5px;color:#B9BFBD}
+.gs-legend span{display:flex;gap:8px;align-items:center}
+.gs-legend i{width:14px;height:14px;border-radius:4px;background:var(--lime)}
+.gs-legend i.w{background:transparent;box-shadow:inset 0 0 0 1px #fff}
+
+/* ---------- specimen ---------- */
+.spec{display:grid;gap:14px;margin-top:22px}
+.spec-l{border-radius:var(--r);background:var(--lime);padding:22px 18px;min-height:340px;display:flex;flex-direction:column;justify-content:flex-end}
+.spec-l .big{font-size:clamp(56px,17vw,140px);line-height:.88;letter-spacing:-.045em;text-transform:uppercase}
+.spec-l .sizes{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:20px;font-size:14px}
+.spec-l .w{display:flex;gap:20px;margin-top:10px;font-size:14px;color:rgba(0,0,0,.6)}
+.swatches{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.sw{position:relative;border-radius:18px;padding:14px;min-height:150px;display:flex;flex-direction:column;justify-content:space-between;border:0;text-align:left}
+.sw .nm{font-size:13px}
+.sw .fm{font-size:clamp(30px,8.4vw,48px);line-height:1;letter-spacing:-.03em}
+.sw .hx{font-size:11px;opacity:.75}
+.sw.a{background:var(--black);color:#fff}
+.sw.b{background:var(--zircon);color:var(--black)}
+.sw.c{background:var(--blue);color:#fff}
+.sw.d{background:#fff;color:var(--black);box-shadow:inset 0 0 0 1px var(--line)}
+@media (min-width:900px){.spec{grid-template-columns:1.2fr 1fr}}
+
+/* ---------- merge machine ---------- */
+.merge{margin-top:30px;border-radius:var(--r);background:var(--black);color:#fff;padding:22px 16px 18px;overflow:hidden}
+.mg-step{display:flex;justify-content:space-between;font-size:12px;color:var(--mute);margin-bottom:16px}
+.mg-step b{color:var(--lime);font-weight:500}
+.mg-line{position:relative;display:flex;flex-wrap:wrap;gap:.2em .32em;align-items:baseline;min-height:3.2em;font-size:clamp(23px,6.6vw,44px);line-height:1.2;letter-spacing:-.02em}
+.mg-line .t{display:inline-block}
+.mg-line .t[data-k="p"],.mg-line .t[data-k="q"],.mg-line .t[data-k="r"]{margin-left:-.28em}
+.mg-line .gh{color:#5d625f;text-decoration:line-through;text-decoration-thickness:2px}
+.mg-line .pr{color:var(--black);background:var(--lime);padding:0 .15em;border-radius:.15em}
+.mg-line .vb{color:var(--lime)}
+.mg-line .cm{color:var(--lime);font-weight:700}
+.mg-cap{margin:14px 0 0;font-size:14px;line-height:1.5;color:#B9BFBD;min-height:42px}
+.mg-cap b{color:#fff;font-weight:500}
+.mg-ru{margin:4px 0 0;font-size:13px;color:var(--mute)}
+.mg-dots{display:flex;gap:6px;margin-top:14px}
+.mg-dots i{flex:1;height:3px;border-radius:2px;background:#333;transition:background .3s}
+.mg-dots i.on{background:var(--lime)}
+
+/* ---------- business cards (prepositions, was/wo) ---------- */
+.bcards{display:grid;gap:14px;margin-top:28px}
+.bc{position:relative;border-radius:20px;padding:20px 18px;min-height:210px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
+.bc.lm{background:var(--lime)}
+.bc.bk{background:var(--black);color:#fff}
+.bc.zi{background:var(--zircon)}
+.bc .tp{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.bc .tp b{font-size:clamp(28px,7.6vw,40px);font-weight:400;letter-spacing:-.03em;line-height:1}
+.bc .tp small{font-size:12px;opacity:.7;text-align:right}
+.bc .ex{margin-top:20px;font-size:16px;line-height:1.45}
+.bc .ex mark{background:var(--black);color:var(--lime);padding:0 .2em;border-radius:.2em}
+.bc.bk .ex mark{background:var(--lime);color:var(--black)}
+.bc .ex small{display:block;margin-top:4px;font-size:13px;opacity:.7}
+.bc .say{position:absolute;right:14px;bottom:14px}
+.bc.bk .say{background:var(--lime);color:var(--black)}
+@media (min-width:900px){.bcards{grid-template-columns:repeat(3,1fr)}}
+
+/* ---------- stats ---------- */
+.stats{display:grid;gap:18px;margin-top:30px}
+.st-ph{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:4/3.6}
+.st-ph img{width:100%;height:100%;object-fit:cover;object-position:60% center}
+.st-ph .glass{position:absolute;left:12px;right:12px;bottom:12px;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 14px;border-radius:14px;background:rgba(0,0,0,.45);color:#fff;font-size:12px}
+.nums{display:grid;grid-template-columns:1fr 1fr;gap:24px 16px}
+.num b{display:block;font-size:clamp(40px,11vw,64px);font-weight:300;letter-spacing:-.04em;line-height:1}
+.num > span{display:block;margin-top:6px;font-size:13px;line-height:1.4;color:var(--mute)}
+@media (min-width:900px){.stats{grid-template-columns:1fr 1fr;align-items:center}}
+
+/* ---------- quiz ---------- */
+.quiz{position:relative;margin-top:30px;border-radius:30px;background:var(--zircon);padding:22px 16px;overflow:hidden}
+.qbar{display:flex;gap:6px;margin-bottom:16px}
+.qbar i{flex:1;height:4px;border-radius:2px;background:#CBD3D0}
+.qbar i.cur{background:var(--black)}
+.qbar i.ok{background:var(--lime-d)}
+.qbar i.bad{background:var(--red)}
+.qn{margin:0;font-size:12px;color:var(--mute)}
+.qq{margin:8px 0 18px;font-size:clamp(21px,5.8vw,30px);line-height:1.3;letter-spacing:-.015em}
+.qq u{text-decoration:none;display:inline-block;min-width:2.6em;border-bottom:2px solid var(--black);text-align:center;color:var(--lime-d);font-weight:600}
+.qr{margin:-10px 0 16px;font-size:13.5px;color:var(--mute)}
+.qo{display:grid;gap:8px}
+.qo button{display:flex;justify-content:space-between;align-items:center;min-height:56px;border-radius:16px;border:0;background:#fff;font-size:17px;padding:0 18px;text-align:left;transition:background .2s,color .2s}
+.qo button::after{content:"↗";opacity:.4}
+.qo button:hover:not(:disabled){background:var(--black);color:#fff}
+.qo button.ok{background:var(--lime);color:var(--black)}
+.qo button.bad{background:var(--red);color:#fff}
+.qx{display:flex;gap:10px;align-items:flex-start;margin-top:14px;padding:14px;border-radius:16px;background:#fff;font-size:14.5px;line-height:1.5}
+.qx svg{margin-top:2px;color:var(--lime-d)}
+.qx.bad svg{color:var(--red)}
+.qnext{margin-top:14px;width:100%}
+.qres{text-align:center;padding:12px 0}
+.score{font-size:96px;font-weight:300;letter-spacing:-.05em;line-height:1}
+.cta-row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:16px}
+.conf{position:absolute;left:50%;top:40%;width:10px;height:14px;border-radius:2px;pointer-events:none}
+
+/* ---------- cheat ---------- */
+.cheat{display:grid;gap:14px;margin-top:28px}
+.ck{border-radius:var(--r);padding:22px 18px}
+.ck h4{margin:0 0 14px;font-size:clamp(26px,7vw,40px);font-weight:400;letter-spacing:-.03em;text-transform:uppercase;line-height:1}
+.ck ul{list-style:none;margin:0;padding:0}
+.ck li{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid var(--line);font-size:15px;line-height:1.45}
+.ck.bk li{border-color:var(--line-w)}
+.ck li .dot{margin-top:5px;width:10px;height:10px;box-shadow:none}
+.ck.lm li .dot{background:var(--black)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips button{display:inline-flex;align-items:center;gap:8px;border:0;padding:10px 14px;border-radius:999px;background:#fff;font-size:13.5px;text-align:left}
+.chips button svg{color:var(--lime-d)}
+@media (min-width:900px){.cheat{grid-template-columns:repeat(3,1fr)}}
+
+/* ---------- thanks / outro ---------- */
+.thanks{position:relative;background:var(--black);color:#fff;padding:70px 0 80px;overflow:hidden}
+.thanks .h{font-size:clamp(54px,16vw,150px);line-height:.9}
+.thanks .sq{position:absolute;right:-40px;top:150px;width:min(520px,90vw);height:auto;opacity:.7}
+.thanks .wrap{position:relative;z-index:1}
+.thanks .lab b{color:#fff}
+.thanks .btn{justify-self:start}
+.thanks .side{position:relative;display:grid;gap:18px;margin-top:40px}
+.thanks .side p{margin:0;font-size:15px;color:#B9BFBD;max-width:38ch}
+.thanks .side a{font-size:22px;color:#fff;text-decoration:none}
+
+/* ---------- AD ---------- */
+.ad-hero{position:relative;min-height:min(90vh,760px);background:#1d1d1d;color:#fff;overflow:hidden;isolation:isolate;display:flex;align-items:flex-end}
+.ad-hero picture,.ad-hero>img{position:absolute;inset:0;z-index:-2}
+.ad-hero img{width:100%;height:100%;object-fit:cover;object-position:70% center}
+.ad-hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(0,0,0,.6),rgba(0,0,0,0) 60%),linear-gradient(0deg,rgba(0,0,0,.75),transparent 55%)}
+.ad-hero .wrap{width:100%;padding-bottom:40px}
+.ad-hero .h{font-size:clamp(50px,14.5vw,150px)}
+.ad-hero .row{display:flex;justify-content:space-between;align-items:flex-end;gap:14px;flex-wrap:wrap;margin-top:22px}
+.ad-hero .row p{margin:0;max-width:34ch;font-size:15px;line-height:1.5;color:#E3E7E5}
+.ad-hero .go{color:#fff}
+.pains{display:grid;gap:14px;margin-top:28px}
+.pains ul{list-style:none;margin:0;padding:0}
+.pains li{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-top:1px solid var(--line-w);font-size:15.5px;line-height:1.5}
+.card.lm li{border-color:rgba(0,0,0,.18)}
+.pains li svg{margin-top:3px}
+.card.bk li svg{color:var(--red)}
+@media (min-width:900px){.pains{grid-template-columns:1fr 1fr}}
+.ad-nums{display:grid;grid-template-columns:1fr 1fr;gap:24px 16px;margin-top:34px;padding-top:24px;border-top:1px solid var(--line)}
+@media (min-width:900px){.ad-nums{grid-template-columns:repeat(4,1fr)}}
+.showcase{display:grid;gap:22px;margin-top:30px}
+.show-ph{display:flex;justify-content:center}
+.show-ph .ph{rotate:0deg;width:min(250px,66vw)}
+.show-ph .ph .scr{background:#fff}
+.show-ph .ph video{width:100%;height:100%;object-fit:contain;object-position:center}
+@media (min-width:900px){.showcase{grid-template-columns:minmax(280px,360px) 1fr;align-items:center;gap:40px}}
+.stories{display:grid;grid-auto-flow:column;grid-auto-columns:min(70vw,280px);gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px var(--gut) 24px;margin:26px calc(var(--gut)*-1) 0;scrollbar-width:none}
+.stories::-webkit-scrollbar{display:none}
+.story{position:relative;scroll-snap-align:center;aspect-ratio:9/16;border-radius:26px;overflow:hidden;background:#111}
+.story img,.story video{width:100%;height:100%;object-fit:cover;object-position:top}
+.story::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.45),rgba(0,0,0,0) 18%,rgba(0,0,0,0) 55%,rgba(0,0,0,.75));pointer-events:none}
+.story .who,.story .cap{z-index:1}
+.story .who{position:absolute;left:12px;top:12px;display:flex;align-items:center;gap:8px;color:#fff;font-size:12px;text-shadow:0 1px 4px rgba(0,0,0,.6)}
+.story .who i{display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--lime);color:var(--black)}
+.story .who i svg{width:14px;height:14px}
+.story .cap{position:absolute;left:14px;right:14px;bottom:16px;color:#fff;font-size:17px;line-height:1.2;text-transform:uppercase;text-align:right;text-shadow:0 2px 10px rgba(0,0,0,.6)}
+.story.flip img{transform:scaleY(-1)}
+@media (min-width:900px){.stories{grid-auto-flow:row;grid-template-columns:repeat(4,1fr);overflow:visible;margin:26px 0 0;padding:8px 0 0}}
+.store{display:grid;gap:20px;margin-top:30px}
+.filt h5{margin:0 0 8px;font-size:15px;font-weight:500;text-decoration:underline;text-underline-offset:4px;text-transform:uppercase}
+.filt label{display:flex;justify-content:space-between;align-items:center;padding:7px 0;font-size:15px;color:var(--ink-2);cursor:pointer}
+.filt input{appearance:none;-webkit-appearance:none;width:18px;height:18px;border-radius:50%;border:1.5px solid #B5BCB9;margin:0;transition:background .2s,border-color .2s}
+.filt input:checked{background:var(--lime-d);border-color:var(--lime-d)}
+.prods{display:grid;gap:14px}
+.prod{display:grid;gap:10px}
+.prod .im{position:relative;border-radius:18px;background:var(--zircon);aspect-ratio:16/11;overflow:hidden;display:grid;place-items:center;padding:12px}
+.prod .im img{width:100%;height:100%;object-fit:contain}
+.prod .im .lvl{position:absolute;left:10px;top:10px;padding:5px 10px;border-radius:999px;background:var(--black);color:#fff;font-size:11px}
+.prod .row{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.prod .row a{font-size:15px;text-transform:uppercase;text-decoration:underline;text-underline-offset:4px}
+.prod .row b{font-weight:500;font-size:16px}
+.prod p{margin:0;font-size:13.5px;line-height:1.5;color:var(--ink-2)}
+.prod.off{opacity:.35}
+.cart{border-radius:var(--r);background:var(--black);color:#fff;padding:22px 18px}
+.cart h4{margin:0 0 16px;font-size:24px;font-weight:400;text-transform:uppercase}
+.ci{display:grid;grid-template-columns:76px 1fr;gap:12px;align-items:center;padding:10px 0;border-top:1px solid var(--line-w)}
+.ci img{width:76px;height:60px;border-radius:10px;object-fit:cover;background:var(--zircon)}
+.ci b{display:block;font-size:15px;font-weight:400;text-transform:uppercase;line-height:1.2}
+.ci small{display:block;font-size:12px;color:var(--mute);margin-top:4px}
+.ci s{color:var(--mute)}
+.tot{display:flex;justify-content:space-between;align-items:baseline;margin:16px 0 4px;padding-top:14px;border-top:1px solid var(--line-w)}
+.tot span{font-size:13px;color:#B9BFBD}
+.tot b{font-size:44px;font-weight:300;letter-spacing:-.03em;color:var(--lime)}
+.tot s{font-size:20px;color:var(--mute);margin-right:8px}
+.cart .go{color:#fff;margin-top:14px}
+.cart .fine{margin:16px 0 0;font-size:12px;line-height:1.55;color:var(--mute)}
+.cart .fine a{color:#fff}
+@media (min-width:900px){.store{grid-template-columns:200px 1fr 340px;align-items:start}.prods{grid-template-columns:1fr 1fr}.cart{position:sticky;top:80px}}
+.revs{display:grid;grid-auto-flow:column;grid-auto-columns:min(78vw,320px);gap:12px;overflow-x:auto;padding:8px var(--gut) 20px;margin:20px calc(var(--gut)*-1) 0;scrollbar-width:none;scroll-snap-type:x mandatory;align-items:start}
+.revs::-webkit-scrollbar{display:none}
+.revs img{width:100%;border-radius:18px;scroll-snap-align:start}
+
+.dock{position:fixed;left:10px;right:10px;bottom:10px;z-index:70;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 8px 8px 18px;border-radius:999px;background:rgba(0,0,0,.94);color:#fff;box-shadow:0 16px 36px -14px rgba(0,0,0,.6);translate:0 140%;transition:translate .4s cubic-bezier(.2,1.2,.4,1)}
+.dock.show{translate:0 0}
+.dock p{margin:0;font-size:12px;line-height:1.25;color:#B9BFBD}
+.dock p b{display:block;font-size:20px;font-weight:400;color:var(--lime)}
+.dock .btn{min-height:46px;padding:0 18px;font-size:12px}
+@media (min-width:900px){.dock{left:auto;right:20px;bottom:20px;width:440px}}
+
+footer{padding:26px 0 100px;font-size:12px;color:var(--mute);background:var(--black)}
+footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+
+.rv{transition:translate .7s cubic-bezier(.2,.9,.3,1)}
+html.js:not(.gs) .rv:not(.in){translate:0 26px}
+.hcard{animation:hin 1.1s cubic-bezier(.2,1,.3,1) both}
+.h-title .h{animation:tin 1.1s .15s cubic-bezier(.2,1.2,.3,1) both}
+.h-title .h:last-child{animation-delay:.28s}
+@keyframes hin{from{scale:.94;translate:0 30px}}
+@keyframes tin{from{translate:0 60px}}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition-duration:.01s!important;scroll-behavior:auto!important}
+}
+</style>
+
+</head>
+<body>
+
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="spk" viewBox="0 0 24 24"><path fill="currentColor" d="M3 9v6h4l5 4V5L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4zM14 3.2v2.1a7 7 0 0 1 0 13.4v2.1a9 9 0 0 0 0-17.6z"/></symbol>
+  <symbol id="sq" viewBox="0 0 400 300"><path d="M58 214c-18-22-6-50 14-58 16-6 10-30 26-40 20-12 18-40 44-44 22-3 30 18 48 12 22-8 30-34 56-26 22 7 16 32 34 42 20 11 46 4 54 28 8 22-14 34-12 54 2 22 28 34 16 56-12 20-38 10-54 24-14 12-6 38-30 42-24 4-30-20-50-22-22-2-34 22-58 14-22-8-14-34-34-44-18-9-34 0-48-14z"/></symbol>
+<symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></symbol>
+<symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+<symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+<symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+<symbol id="i-circle-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></symbol>
+<symbol id="i-circle-x" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></symbol>
+<symbol id="i-volume-2" viewBox="0 0 24 24"><path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z"/><path d="M16 9a5 5 0 0 1 0 6"/><path d="M19.364 18.364a9 9 0 0 0 0-12.728"/></symbol>
+<symbol id="i-trophy" viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></symbol>
+<symbol id="i-repeat" viewBox="0 0 24 24"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></symbol>
+<symbol id="i-brain" viewBox="0 0 24 24"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/><path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.477 10.896a4 4 0 0 1 .585-.396"/><path d="M19.938 10.5a4 4 0 0 1 .585.396"/><path d="M6 18a4 4 0 0 1-1.967-.516"/><path d="M19.967 17.484A4 4 0 0 1 18 18"/></symbol>
+<symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></symbol>
+<symbol id="i-route" viewBox="0 0 24 24"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></symbol>
+<symbol id="i-map-pin" viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+<symbol id="i-flag" viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/></symbol>
+<symbol id="i-bike" viewBox="0 0 24 24"><circle cx="18.5" cy="17.5" r="3.5"/><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="15" cy="5" r="1"/><path d="M12 17.5V14l-3-3 4-3 2 3h2"/></symbol>
+<symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+<symbol id="i-user" viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+<symbol id="i-baby" viewBox="0 0 24 24"><path d="M9 12h.01"/><path d="M15 12h.01"/><path d="M10 16c.5.3 1.2.5 2 .5s1.5-.2 2-.5"/><path d="M19 6.3a9 9 0 0 1 1.8 3.9 2 2 0 0 1 0 3.6 9 9 0 0 1-17.6 0 2 2 0 0 1 0-3.6A9 9 0 0 1 12 3c2 0 3.5 1.1 3.5 2.5s-.9 2.5-2 2.5c-.8 0-1.5-.4-1.5-1"/></symbol>
+<symbol id="i-house" viewBox="0 0 24 24"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
+<symbol id="i-book" viewBox="0 0 24 24"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"/></symbol>
+<symbol id="i-book-open" viewBox="0 0 24 24"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></symbol>
+<symbol id="i-graduation-cap" viewBox="0 0 24 24"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+<symbol id="i-timer" viewBox="0 0 24 24"><line x1="10" x2="14" y1="2" y2="2"/><line x1="12" x2="15" y1="14" y2="11"/><circle cx="12" cy="14" r="8"/></symbol>
+<symbol id="i-hourglass" viewBox="0 0 24 24"><path d="M5 22h14"/><path d="M5 2h14"/><path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22"/><path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/></symbol>
+<symbol id="i-bot" viewBox="0 0 24 24"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></symbol>
+<symbol id="i-wifi-off" viewBox="0 0 24 24"><path d="M12 20h.01"/><path d="M8.5 16.429a5 5 0 0 1 7 0"/><path d="M5 12.859a10 10 0 0 1 5.17-2.69"/><path d="M19 12.859a10 10 0 0 0-2.007-1.523"/><path d="M2 8.82a15 15 0 0 1 4.177-2.643"/><path d="M22 8.82a15 15 0 0 0-11.288-3.764"/><path d="m2 2 20 20"/></symbol>
+<symbol id="i-mic" viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></symbol>
+<symbol id="i-message-circle" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+<symbol id="i-briefcase" viewBox="0 0 24 24"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></symbol>
+<symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+<symbol id="i-languages" viewBox="0 0 24 24"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></symbol>
+<symbol id="i-link" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></symbol>
+<symbol id="i-split" viewBox="0 0 24 24"><path d="M16 3h5v5"/><path d="M8 3H3v5"/><path d="M12 22v-8.3a4 4 0 0 0-1.172-2.872L3 3"/><path d="m15 9 6-6"/></symbol>
+<symbol id="i-git-branch" viewBox="0 0 24 24"><line x1="6" x2="6" y1="3" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></symbol>
+<symbol id="i-corner-down-right" viewBox="0 0 24 24"><polyline points="15 10 20 15 15 20"/><path d="M4 4v7a4 4 0 0 0 4 4h12"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+<symbol id="i-signpost" viewBox="0 0 24 24"><path d="M12 13v8"/><path d="M12 3v3"/><path d="M18 6a2 2 0 0 1 1.387.56l2.307 2.22a1 1 0 0 1 0 1.44l-2.307 2.22A2 2 0 0 1 18 13H6a2 2 0 0 1-1.387-.56l-2.306-2.22a1 1 0 0 1 0-1.44l2.306-2.22A2 2 0 0 1 6 6z"/></symbol>
+<symbol id="i-mountain" viewBox="0 0 24 24"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></symbol>
+<symbol id="i-gauge" viewBox="0 0 24 24"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></symbol>
+<symbol id="i-play" viewBox="0 0 24 24"><polygon points="6 3 20 12 6 21 6 3"/></symbol>
+<symbol id="i-list-checks" viewBox="0 0 24 24"><path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/><path d="M13 6h8"/><path d="M13 12h8"/><path d="M13 18h8"/></symbol>
+<symbol id="i-layers" viewBox="0 0 24 24"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/></symbol>
+<symbol id="i-coins" viewBox="0 0 24 24"><circle cx="8" cy="8" r="6"/><path d="M18.09 10.37A6 6 0 1 1 10.34 18"/><path d="M7 6h1v4"/><path d="m16.71 13.88.7.71-2.82 2.82"/></symbol>
+<symbol id="i-chart-line" viewBox="0 0 24 24"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="m19 9-5 5-4-4-3 3"/></symbol>
+<symbol id="i-tv" viewBox="0 0 24 24"><rect width="20" height="15" x="2" y="7" rx="2" ry="2"/><polyline points="17 2 12 7 7 2"/></symbol>
+<symbol id="i-pen-line" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838a.5.5 0 0 1-.62-.62l.838-2.872a2 2 0 0 1 .506-.854z"/></symbol>
+<symbol id="i-smartphone" viewBox="0 0 24 24"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></symbol>
+<symbol id="i-gem" viewBox="0 0 24 24"><path d="M6 3h12l4 6-10 13L2 9Z"/><path d="M11 3 8 9l4 13 4-13-3-6"/><path d="M2 9h20"/></symbol>
+<symbol id="i-zap" viewBox="0 0 24 24"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></symbol>
+<symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+<symbol id="i-hand" viewBox="0 0 24 24"><path d="M18 11V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2"/><path d="M14 10V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v2"/><path d="M10 10.5V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></symbol>
+<symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></symbol>
+<symbol id="i-lock" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+
+</svg>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="../media/logo.webp" alt="" width="28" height="28"><b>Stellas</b><i>/ Relativ Roads</i></a>
+    <div class="tb-r">
+      <a class="tl" href="#quiz">Тест</a>
+      
+      <a class="pill" href="#cheat"><svg class="ic"><use href="#i-list-checks"/></svg>Шпаргалка</a>
+    </div>
+  </div>
+  <div class="prog" id="prog"></div>
+</header>
+
+<main id="top" lang="ru">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hcard">
+      <picture><source media="(max-width:640px)" srcset="../media/hero-m.webp"><img src="../media/hero.webp" alt="Велосипедист поднимается по горному серпантину" width="1280" height="720" fetchpriority="high"></picture>
+      <div class="h-nav"><span class="br" style="color:#fff">Grammatik · B1</span><a class="pill wt" href="#mirror"><svg class="ic"><use href="#i-route"/></svg>Маршрут</a></div>
+      <h1 class="h-title"><span class="h">Relativ</span><span class="h">sätze</span></h1>
+      <div class="h-tags"><span class="br">der · die · das</span><span class="br">16 форм</span><span class="br">2 вопроса</span><span class="br">Verb → Ende</span></div>
+      <div class="h-bot">
+        <div class="mini"><img src="../media/portrait.webp" alt="" width="64" height="64"><div><b>= который</b><small>Ты знаешь это правило с детства. Просто по-русски</small></div></div>
+        <a class="go" href="#story">Поехали <svg class="ic"><use href="#i-arrow-up-right"/></svg></a>
+      </div>
+    </div>
+    <div class="h-under">
+      <p>Relativsätze это не новая грамматика. Это «который». <span class="lt">Ты пользуешься им всю жизнь. Осталось пересесть на немецкий велосипед.</span></p>
+      <div class="lab" style="margin:0"><span><b>Гайд Stellas</b> · B1</span><span>~10 минут</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM / SOLUTION -->
+<section style="padding-top:20px">
+  <div class="wrap">
+    <div class="ps">
+      <div class="card bk rv">
+        <p class="cap">Проблема</p>
+        <p class="big">Ты говоришь короткими предложениями. Каждое по три слова.</p>
+        <span class="robo"><b>Ich habe ein Fahrrad. Das Fahrrad ist grün. Ich mag das Fahrrad.</b><br>Звучит как робот, который учит немецкий третий день.</span>
+      </div>
+      <div class="card lm rv">
+        <p class="cap">Решение</p>
+        <p class="big">Одно слово-связка. Три предложения становятся одним.</p>
+        <p class="big" style="font-size:clamp(17px,4.6vw,22px)"><b>Ich mag das grüne Fahrrad, das ich habe.</b> Это и есть Relativsatz.</p>
+      </div>
+      <div class="ps-phone rv">
+        <div class="ph"><div class="scr"><img src="../media/sprint-m.webp" alt="" loading="lazy"><div class="t">der<span>die das</span></div><div class="jr"><span>Join the route</span><span>↗</span></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU / CONTENTS -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <nav class="menu rv" aria-label="Маршрут гайда">
+      <div class="menu-top"><span class="brand"><b>Relativ Roads</b></span><span>Не про финиш. Про дорогу.</span></div>
+      <div class="menu-cols">
+        <div><h4>Старт</h4><a href="#story">История</a><a href="#mirror">= который</a><a href="#road">Дорога</a></div>
+        <div><h4>Правила</h4><a href="#builder">2 вопроса</a><a href="#grid">16 форм</a><a href="#special">5 особых</a></div>
+        <div><h4>Практика</h4><a href="#merge">Склейка</a><a href="#preps">Предлоги</a><a href="#quiz">Тест</a></div>
+        <div><h4>Финиш</h4><a href="#cheat">Шпаргалка</a><a href="https://t.me/stellasdeutsch" target="_blank" rel="noopener">Telegram</a></div>
+      </div>
+      <div class="menu-bot"><span>© 2026 Stellas Deutsch</span><span>Relativsätze · der, die, das</span></div>
+    </nav>
+  </div>
+</section>
+
+<!-- STORY -->
+<section id="story">
+  <div class="wrap">
+    <div class="lab"><b>История</b><span class="br">Berlin · Fahrradladen</span></div>
+    <h2 class="h split">Das, <span class="gr">das</span> <span class="lm">das</span></h2>
+    <div class="story-grid">
+      <div class="st-photo rv"><img src="../media/shop.webp" alt="Парень в магазине велосипедов показывает на один из велосипедов, продавец смотрит" loading="lazy"><div class="tag"><b>Тимур, продавец и три чёрных велосипеда</b><span>↗</span></div></div>
+      <div class="st-text rv">
+        <p>Помнишь Тимура? Того, который пришёл в Bürgeramt с Mietvertrag.</p>
+        <p>Тимур решил купить велосипед. В магазине на стене висели три чёрных велосипеда. Тимуру нравился средний.</p>
+        <p>Говорит, <span class="q">ich möchte das Fahrrad.</span> Продавец говорит, <span class="q">welches?</span> Тимур говорит, <span class="q">das.</span> Продавец снимает левый.</p>
+        <p>Тимур говорит, <span class="q">nein. Das.</span> Продавец снимает правый.</p>
+        <p>Тимур говорит, <span class="q">das Fahrrad. Schwarz. Mitte. Grün. Hier.</span></p>
+        <p>Продавец говорит, <span class="q">ah. Das Fahrrad, <span class="k">das in der Mitte hängt?</span></span> Тимур говорит, ja. Genau. Das.</p>
+        <p>Велосипед он купил. Предложение за него построил продавец.</p>
+        <p class="dry">«Das Fahrrad, das in der Mitte hängt». Семь слов. Тимур потратил на них десять минут и немного достоинства.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MIRROR: который = der -->
+<section id="mirror" style="padding-top:20px">
+  <div class="wrap">
+    <div class="lab"><b>Ты это уже умеешь</b><span class="br">RU = DE</span></div>
+    <h2 class="h split">Который <span class="lm">= der</span></h2>
+    <p class="lede">Русское «который» меняется так же, как немецкое der. <b>Род берёт у слова, к которому прицепилось. Падеж берёт из своей роли в придаточном.</b> <span class="lt">Одна логика на два языка.</span></p>
+    <div class="mirror rv" id="mirrorBox">
+      <div class="mir-head"><span>По-русски</span><span>По-немецки</span></div>
+      <div class="mir-row"><div class="ru">мужчина, <b>который</b> ждёт<small>он сам делает → кто?</small></div><div class="dd">der Mann, <b>der</b> wartet<small>Nominativ</small></div></div>
+      <div class="mir-row"><div class="ru">мужчина, <b>которого</b> я жду<small>его ждут → кого?</small></div><div class="dd">der Mann, <b>den</b> ich erwarte<small>Akkusativ</small></div></div>
+      <div class="mir-row"><div class="ru">мужчина, <b>которому</b> я помогаю<small>ему помогают → кому?</small></div><div class="dd">der Mann, <b>dem</b> ich helfe<small>Dativ</small></div></div>
+      <div class="mir-row"><div class="ru">мужчина, <b>чей</b> велосипед зелёный<small>чей?</small></div><div class="dd">der Mann, <b>dessen</b> Rad grün ist<small>Genitiv</small></div></div>
+      <p class="mir-note">Видишь? <b>Ты не учишь новое.</b> Ты переводишь то, что мозг и так делает каждый день.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ROAD -->
+<section class="dark" id="road">
+  <div class="road-bg" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="lab"><b>Схема</b><span class="br">Hauptsatz → Nebensatz</span></div>
+    <h2 class="h split on-dark">Придаточное <span class="lm">это</span> <span class="gr">боковая дорога</span></h2>
+    <p class="lede">Главное предложение едет прямо. На запятой есть развилка. <b>der</b> оглядывается на слово, ради которого свернули. <b>Глагол</b> едет до самого финиша.</p>
+    <div class="route rv" id="route">
+      <svg class="route-svg" viewBox="0 0 360 320" role="img" aria-label="Ich kenne den Mann, der in Wien wohnt: схема как дорога с развилкой">
+        <path class="rd" d="M10,80 L250,80"/>
+        <path class="rd2" d="M244,80 C300,80 310,140 250,165 C190,190 90,190 90,240 C90,290 220,290 330,280"/>
+        <path class="ln" id="rLine" d="M10,80 L244,80 C300,80 310,140 250,165 C190,190 90,190 90,240 C90,290 220,290 330,280"/>
+        <path class="ref" id="rRef" d="M276,106 C276,38 236,34 214,66"/>
+        <text x="18" y="62" class="t-de">Ich</text>
+        <text x="58" y="62" class="t-de">kenne</text>
+        <text x="122" y="62" class="t-de">den</text>
+        <text x="164" y="62" class="t-de" id="rMann">Mann</text>
+        <text x="226" y="64" style="font-size:30px;fill:#A6F64B;font-weight:700">,</text>
+        <text x="160" y="112" class="t-sm">[ BEZUGSWORT ]</text>
+        <text x="14" y="112" class="t-sm">HAUPTSATZ</text>
+        <g id="rDer"><rect x="256" y="106" width="42" height="26" rx="13" class="chip"/><text x="277" y="124" class="t-pr" text-anchor="middle">der</text></g>
+        <text x="132" y="172" class="t-de">in Wien</text>
+        <text x="104" y="316" class="t-sm">NEBENSATZ</text>
+        <text x="232" y="268" class="t-vb" id="rVerb">wohnt.</text>
+        <line x1="332" y1="282" x2="332" y2="246" stroke="#fff" stroke-width="2"/>
+        <polygon points="332,246 352,253 332,260" class="flag"/>
+        <circle r="8" class="rider" id="rRider" cx="10" cy="80" stroke="#A6F64B" stroke-width="3"/>
+      </svg>
+      <div class="route-steps" id="rSteps">
+        <div class="rs on"><i>1</i><span><b>Главная дорога.</b> Ich kenne den Mann. Обычный порядок слов.</span></div>
+        <div class="rs"><i>2</i><span><b>Запятая = развилка.</b> Без неё придаточное не начинается.</span></div>
+        <div class="rs"><i>3</i><span><b>der смотрит назад</b> на Mann: мужской род, значит der.</span></div>
+        <div class="rs"><i>4</i><span><b>Глагол в самом конце.</b> wohnt доезжает до финиша.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUILDER -->
+<section id="builder">
+  <div class="wrap">
+    <div class="lab"><b>Конструктор</b><span class="br">2 вопроса → 1 форма</span></div>
+    <h2 class="h split">Каждая форма <span class="gr">в одно</span> <span class="lm">касание</span></h2>
+    <div class="app-wrap">
+      <div class="app rv" id="app">
+        <div class="app-h"><b>Relativ</b><span class="who"><img src="../media/portrait.webp" alt=""><span><small>Welcome</small>Fahrerin</span></span></div>
+        <div class="tabs" id="tNoun" role="tablist" aria-label="Слово">
+          <button type="button" class="on" data-n="0">der Trainer</button><button type="button" data-n="1">die Fahrerin</button><button type="button" data-n="2">das Team</button><button type="button" data-n="3">die Räder</button>
+        </div>
+        <div class="tabs role" id="tRole" role="tablist" aria-label="Роль в придаточном">
+          <button type="button" class="on" data-r="0">Nominativ</button><button type="button" data-r="1">Akkusativ</button><button type="button" data-r="2">Dativ</button><button type="button" data-r="3">Genitiv</button>
+        </div>
+        <div class="srch"><svg class="ic"><use href="#i-search"/></svg><span id="bQ">Кто? Сам что-то делает</span><span class="dot"></span></div>
+        <div class="res" id="bRes" style="background-image:url(../media/hero-s.webp)">
+          <button class="say" type="button" id="bSay" data-say="" aria-label="Озвучить"><svg><use href="#spk"/></svg></button>
+          <span class="pr" id="bPr">der</span>
+          <div class="ex" id="bEx"></div>
+          <div class="tr" id="bTr"></div>
+          <div class="why" id="bWhy"></div>
+        </div>
+      </div>
+      <div class="callouts">
+        <div class="co rv"><span class="dot"></span><div><h4>Вопрос 1: к кому прицепились?</h4><p>Смотришь на слово перед запятой. der Trainer, die Fahrerin, das Team, die Räder. Род и число берёшь у него. Это как выбрать страну в фильтре.</p></div></div>
+        <div class="co rv"><span class="dot"></span><div><h4>Вопрос 2: что он делает в придаточном?</h4><p>Сам действует, значит Nominativ. Его видят, значит Akkusativ. Ему помогают, значит Dativ. «Чей» значит Genitiv. Падеж решает придаточное, а не главное.</p></div></div>
+        <div class="co rv"><span class="dot"></span><div><h4>Результат</h4><p>Два ответа дают одну форму. Без таблицы перед глазами. Таблица дальше, для проверки.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GRID SYSTEM -->
+<section id="grid" style="padding-top:20px">
+  <div class="wrap">
+    <div class="lab"><b>Grid system</b><span class="br">16 клеток</span></div>
+    <h2 class="h split">Это <span class="gr">артикль.</span> <span class="lm">Почти.</span></h2>
+    <p class="lede">11 клеток из 16 совпадают с обычным артиклем. Переключай и смотри, какие <b>5 клеток</b> меняются.</p>
+    <div class="gridsys rv" id="gridBox">
+      <div class="gs-px"><span></span><span>maskulin</span><span>feminin</span><span>neutrum</span><span>plural</span></div>
+      <div class="gs-tbl" id="gsTbl"></div>
+      <div class="gs-legend"><span><i></i>Отличается от артикля</span><span><i class="w"></i>Как артикль</span></div>
+      <div style="display:flex;gap:8px;margin-top:16px"><button type="button" class="pill ol" id="gsArt" style="color:#fff">Artikel</button><button type="button" class="pill lm" id="gsRel">Relativpronomen</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- SPECIAL -->
+<section id="special" style="padding-top:20px">
+  <div class="wrap">
+    <div class="lab"><b>5 особых форм</b><span class="br">Type specimen</span></div>
+    <div class="spec">
+      <div class="spec-l rv">
+        <div class="big">Denen<br>Dessen<br>Deren</div>
+        <div class="sizes"><span>denen = которым (мн.)</span><span>dessen = чей (der, das)</span><span>deren = чья, чьи (die, мн.)</span></div>
+        <div class="w"><span>Dativ Plural</span><span>Genitiv</span></div>
+      </div>
+      <div class="swatches">
+        <button type="button" class="sw a rv" data-say="der, den, dem, dessen"><span class="nm">Maskulin</span><span class="fm">der</span><span class="hx">der · den · dem · dessen</span></button>
+        <button type="button" class="sw b rv" data-say="die, die, der, deren"><span class="nm">Feminin</span><span class="fm">die</span><span class="hx">die · die · der · deren</span></button>
+        <button type="button" class="sw c rv" data-say="das, das, dem, dessen"><span class="nm">Neutrum</span><span class="fm">das</span><span class="hx">das · das · dem · dessen</span></button>
+        <button type="button" class="sw d rv" data-say="die, die, denen, deren"><span class="nm">Plural</span><span class="fm">die</span><span class="hx">die · die · denen · deren</span></button>
+      </div>
+    </div>
+    <p class="lede" style="font-size:15px">Ловушка: <b>die Leute, denen ich helfe</b>, а не «den». <span class="lt">Артикль в Dativ Plural это den, местоимение denen. Одна буква, а носитель услышит сразу.</span></p>
+  </div>
+</section>
+
+<!-- MERGE -->
+<section id="merge">
+  <div class="wrap">
+    <div class="lab"><b>Склейка</b><span class="br">2 → 1</span></div>
+    <h2 class="h split">Два предложения <span class="lm">в одно</span></h2>
+    <p class="lede">Три примера по четыре шага. Смотри, куда уезжает глагол. Нажми на карточку, чтобы перелистнуть.</p>
+    <div class="merge rv" id="mg" role="button" tabindex="0" aria-label="Следующий шаг склейки">
+      <div class="mg-step"><span id="mgEx">Пример 1 из 3</span><b id="mgSt">Шаг 1</b></div>
+      <div class="mg-line" id="mgLine" aria-live="polite"></div>
+      <p class="mg-cap" id="mgCap"></p>
+      <p class="mg-ru" id="mgRu"></p>
+      <div class="mg-dots" id="mgDots"><i class="on"></i><i></i><i></i><i></i></div>
+    </div>
+  </div>
+</section>
+
+<!-- PREPOSITIONS + WAS/WO -->
+<section id="preps" style="padding-top:20px">
+  <div class="wrap">
+    <div class="lab"><b>Предлоги и исключения</b><span class="br">in der · mit dem · was · wo</span></div>
+    <h2 class="h split">Предлог <span class="gr">едет</span> <span class="lm">первым</span></h2>
+    <p class="lede">Как в русском: «город, <b>в котором</b>», а не «который в». <span class="lt">Падеж тогда выбирает предлог.</span></p>
+    <div class="bcards">
+      <div class="bc lm rv"><div class="tp"><b>in der</b><small>in + Dativ<br>die Stadt</small></div><div class="ex">Die Stadt, <mark>in der</mark> ich wohne.<small>Город, в котором я живу.</small></div><button class="say" type="button" data-say="Die Stadt, in der ich wohne." aria-label="Озвучить"><svg><use href="#spk"/></svg></button></div>
+      <div class="bc bk rv"><div class="tp"><b>mit dem</b><small>mit + Dativ<br>der Freund</small></div><div class="ex">Der Freund, <mark>mit dem</mark> ich fahre.<small>Друг, с которым я катаюсь.</small></div><button class="say" type="button" data-say="Der Freund, mit dem ich fahre." aria-label="Озвучить"><svg><use href="#spk"/></svg></button></div>
+      <div class="bc zi rv"><div class="tp"><b>für die</b><small>für + Akkusativ<br>die Leute</small></div><div class="ex">Die Leute, <mark>für die</mark> ich koche.<small>Люди, для которых я готовлю.</small></div><button class="say" type="button" data-say="Die Leute, für die ich koche." aria-label="Озвучить"><svg><use href="#spk"/></svg></button></div>
+      <div class="bc bk rv"><div class="tp"><b>was</b><small>после alles, nichts,<br>etwas, das Beste</small></div><div class="ex">Alles, <mark>was</mark> du brauchst.<small>Всё, что тебе нужно.</small></div><button class="say" type="button" data-say="Alles, was du brauchst." aria-label="Озвучить"><svg><use href="#spk"/></svg></button></div>
+      <div class="bc zi rv"><div class="tp"><b>was</b><small>после превосходной<br>степени</small></div><div class="ex">Das Beste, <mark>was</mark> ich je gegessen habe.<small>Лучшее, что я когда-либо ел.</small></div><button class="say" type="button" data-say="Das Beste, was ich je gegessen habe." aria-label="Озвучить"><svg><use href="#spk"/></svg></button></div>
+      <div class="bc lm rv"><div class="tp"><b>wo</b><small>для мест,<br>= in der / in dem</small></div><div class="ex">Wien ist die Stadt, <mark>wo</mark> ich wohne.<small>Вена это город, где я живу. Разговорно и нормально.</small></div><button class="say" type="button" data-say="Wien ist die Stadt, wo ich wohne." aria-label="Озвучить"><svg><use href="#spk"/></svg></button></div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section style="padding-top:20px">
+  <div class="wrap">
+    <div class="lab"><b>Не про запоминание</b><span class="br">Про систему</span></div>
+    <h2 class="h split">Не про <span class="gr">таблицу.</span> <span class="lm">Про логику.</span></h2>
+    <div class="stats">
+      <div class="st-ph rv"><img src="../media/portrait.webp" alt="Велогонщица в лаймовых очках" loading="lazy"><div class="glass"><span>Становись частью тех, кто говорит длинно</span><span>↗</span></div></div>
+      <div class="nums">
+        <div class="num rv"><b><span class="count" data-to="100">100</span>%</b><span>придаточных: спрягаемый глагол в конце</span></div>
+        <div class="num rv"><b class="count" data-to="2">2</b><span>вопроса, чтобы выбрать форму</span></div>
+        <div class="num rv"><b class="count" data-to="11">11</b><span>клеток из 16 совпадают с артиклем</span></div>
+        <div class="num rv"><b class="count" data-to="5">5</b><span>особых форм: denen, dessen, deren</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUIZ -->
+<section id="quiz" style="padding-top:20px">
+  <div class="wrap">
+    <div class="lab"><b>Финальный подъём</b><span class="br">6 вопросов</span></div>
+    <h2 class="h split">Проверь <span class="lm">маршрут</span></h2>
+    <div class="quiz rv" id="qz" aria-live="polite"></div>
+  </div>
+</section>
+
+<!-- CHEAT -->
+<section id="cheat" style="padding-top:20px">
+  <div class="wrap">
+    <div class="lab"><b>Шпаргалка</b><span class="br">Сохрани скрин</span></div>
+    <h2 class="h split">Один <span class="gr">экран.</span> <span class="lm">Весь маршрут.</span></h2>
+    <div class="cheat">
+      <div class="ck card bk rv">
+        <h4>Правила</h4>
+        <ul>
+          <li><span class="dot"></span><span>Род и число берёшь у слова перед запятой</span></li>
+          <li><span class="dot"></span><span>Падеж берёшь из роли в придаточном</span></li>
+          <li><span class="dot"></span><span>Перед der/die/das всегда запятая</span></li>
+          <li><span class="dot"></span><span>Спрягаемый глагол в самом конце</span></li>
+          <li><span class="dot"></span><span>Предлог стоит перед местоимением: in der, mit dem</span></li>
+        </ul>
+      </div>
+      <div class="ck card lm rv">
+        <h4>5 особых</h4>
+        <ul>
+          <li><span class="dot"></span><span><b>denen</b>: Dativ Plural. Die Leute, denen ich helfe</span></li>
+          <li><span class="dot"></span><span><b>dessen</b>: чей (der, das). Der Mann, dessen Rad grün ist</span></li>
+          <li><span class="dot"></span><span><b>deren</b>: чья, чьи (die, мн.). Die Frau, deren Sohn fährt</span></li>
+          <li><span class="dot"></span><span><b>was</b> после alles, nichts, etwas, das Beste</span></li>
+          <li><span class="dot"></span><span><b>wo</b> для мест, разговорный вариант in der</span></li>
+        </ul>
+      </div>
+      <div class="ck card zi rv">
+        <h4>Скажи вслух</h4>
+        <div class="chips">
+          <button type="button" data-say="Ich kenne den Mann, der in Wien wohnt."><svg class="ic"><use href="#i-volume-2"/></svg>Ich kenne den Mann, der in Wien wohnt.</button>
+          <button type="button" data-say="Das ist das Rad, das ich gekauft habe."><svg class="ic"><use href="#i-volume-2"/></svg>Das ist das Rad, das ich gekauft habe.</button>
+          <button type="button" data-say="Die Leute, mit denen ich fahre, sind nett."><svg class="ic"><use href="#i-volume-2"/></svg>Die Leute, mit denen ich fahre, sind nett.</button>
+          <button type="button" data-say="Alles, was du brauchst."><svg class="ic"><use href="#i-volume-2"/></svg>Alles, was du brauchst.</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- THANKS -->
+<section class="thanks">
+  <svg class="squig sq" viewBox="0 0 400 300" aria-hidden="true"><path id="sqPath" d="M58 214c-18-22-6-50 14-58 16-6 10-30 26-40 20-12 18-40 44-44 22-3 30 18 48 12 22-8 30-34 56-26 22 7 16 32 34 42 20 11 46 4 54 28 8 22-14 34-12 54 2 22 28 34 16 56-12 20-38 10-54 24-14 12-6 38-30 42-24 4-30-20-50-22-22-2-34 22-58 14-22-8-14-34-34-44-18-9-34 0-48-14z"/></svg>
+  <div class="wrap">
+    <div class="lab"><b>Relativ Roads</b><span>Увидимся на маршруте</span></div>
+    <h2 class="h split">Спасибо <span class="gr">за</span> <span class="lm">время</span></h2>
+    <div class="side">
+      <p>Ты, который дочитал до конца, уже строишь предложения длиннее трёх слов. Это и было целью.</p>
+      
+      <a class="btn" href="#quiz">Пройти тест ещё раз ↗</a>
+      <a href="https://t.me/stellasdeutsch" target="_blank" rel="noopener">Telegram · @stellasdeutsch ↗</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><span>Stellas · немецкий без воды</span><span>Relativsätze · 2026</span></div></footer>
+
+
+
+<script>
+function relInit(){
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var G = window.gsap && window.ScrollTrigger ? window.gsap : null;
+  var AD = !!document.getElementById('platform');
+  document.documentElement.classList.add('js');
+  if(G){
+    try{ G.registerPlugin(ScrollTrigger); window.SplitText && G.registerPlugin(SplitText); window.MotionPathPlugin && G.registerPlugin(MotionPathPlugin); }catch(e){ G = null; }
+  }
+  if(G){ document.documentElement.classList.add('gs'); ScrollTrigger.config({ignoreMobileResize:true}); }
+  var MP = G && window.MotionPathPlugin, ST = G && window.SplitText;
+  var anim = G && !reduce;
+  function $(s,r){ return (r||document).querySelector(s); }
+  function $$(s,r){ return Array.prototype.slice.call((r||document).querySelectorAll(s)); }
+
+  /* ---------- speech ---------- */
+  var tts = 'speechSynthesis' in window;
+  if(!tts) document.documentElement.classList.add('no-tts');
+  var deVoice = null;
+  function pickVoice(){ try{ var v = speechSynthesis.getVoices(); deVoice = v.find(function(x){return /^de/i.test(x.lang)}) || null; }catch(e){} }
+  if(tts){ pickVoice(); try{ speechSynthesis.onvoiceschanged = pickVoice; }catch(e){} }
+  function say(text, btn){
+    if(!tts || !text) return;
+    try{
+      speechSynthesis.cancel();
+      var u = new SpeechSynthesisUtterance(text);
+      u.lang = 'de-DE'; u.rate = .88; if(deVoice) u.voice = deVoice;
+      if(btn){ btn.classList.add('on'); u.onend = u.onerror = function(){ btn.classList.remove('on'); }; }
+      speechSynthesis.speak(u);
+    }catch(e){}
+  }
+  document.addEventListener('click', function(e){
+    var b = e.target.closest('[data-say]');
+    if(!b || !b.dataset.say) return;
+    say(b.dataset.say, b.classList.contains('say') ? b : null);
+    if(anim) G.fromTo(b, {scale:.94}, {scale:1, duration:.5, ease:'elastic.out(1.1,.4)'});
+  });
+
+  function whenVisible(el, on, off, th){
+    if(!el) return;
+    if(!('IntersectionObserver' in window)){ on(); return; }
+    new IntersectionObserver(function(es){ es.forEach(function(en){ en.isIntersecting ? on() : (off && off()); }); }, {threshold:th||.25}).observe(el);
+  }
+
+  /* ---------- reveal ---------- */
+  if(anim){
+    ScrollTrigger.batch('.rv', {start:'top 90%', once:true, onEnter:function(els){
+      G.from(els, {y:50, duration:.9, ease:'power3.out', stagger:.08});
+    }});
+  } else if('IntersectionObserver' in window){
+    var rio = new IntersectionObserver(function(es){ es.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); rio.unobserve(en.target); } }); }, {rootMargin:'0px 0px -8% 0px'});
+    $$('.rv').forEach(function(el){ rio.observe(el); });
+  } else $$('.rv').forEach(function(el){ el.classList.add('in'); });
+
+  /* ---------- headings: words rise from a mask line ---------- */
+  if(anim && ST){
+    $$('.h.split').forEach(function(h){
+      var s = new SplitText(h, {type:'words', wordsClass:'wd'});
+      G.from(s.words, {yPercent:70, rotation:3, duration:.9, ease:'power4.out', stagger:.07, scrollTrigger:{trigger:h, start:'top 88%', once:true}});
+    });
+  }
+
+  /* ---------- progress ---------- */
+  var prog = $('#prog');
+  function onScroll(){ var d = document.documentElement, max = d.scrollHeight - d.clientHeight; prog.style.transform = 'scaleX(' + (max > 0 ? Math.min(1, d.scrollTop/max) : 0) + ')'; }
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  /* ---------- hero parallax ---------- */
+  if(anim){
+    G.to('.hcard img', {yPercent:8, scale:1.06, ease:'none', scrollTrigger:{trigger:'.hcard', start:'top top', end:'bottom top', scrub:true}});
+    G.to('.h-title .h:first-child', {xPercent:-6, ease:'none', scrollTrigger:{trigger:'.hcard', start:'top top', end:'bottom top', scrub:true}});
+    G.to('.h-title .h:last-child', {xPercent:6, ease:'none', scrollTrigger:{trigger:'.hcard', start:'top top', end:'bottom top', scrub:true}});
+    G.from('.ps .ph', {rotation:-22, y:80, duration:1.2, ease:'power3.out', scrollTrigger:{trigger:'.ps-phone', start:'top 85%', once:true}});
+  }
+
+  /* ---------- counters ---------- */
+  $$('.count[data-to]').forEach(function(el){
+    var to = +el.dataset.to;
+    if(!anim){ el.textContent = to; return; }
+    var o = {v:0};
+    G.to(o, {v:to, duration:1.6, ease:'power3.out', scrollTrigger:{trigger:el, start:'top 92%', once:true}, onUpdate:function(){ el.textContent = Math.round(o.v); }});
+  });
+
+  /* ---------- mirror rows light up one by one ---------- */
+  (function(){
+    var rows = $$('#mirrorBox .mir-row'), i = 0, t = null;
+    if(!rows.length || reduce) return;
+    function tick(){ rows.forEach(function(r,j){ r.classList.toggle('on', j===i); }); if(anim) G.fromTo($('.dd b', rows[i]), {scale:.6, rotation:-8}, {scale:1, rotation:0, duration:.6, ease:'elastic.out(1,.45)'}); i = (i+1) % rows.length; }
+    whenVisible($('#mirrorBox'), function(){ if(t) return; tick(); t = setInterval(tick, 1800); }, function(){ clearInterval(t); t = null; }, .3);
+  })();
+
+  /* ---------- road: rider takes the side road ---------- */
+  (function(){
+    var box = $('#route'); if(!box) return;
+    var steps = $$('#rSteps .rs'), rider = $('#rRider'), ln = $('#rLine'), ref = $('#rRef'), der = $('#rDer'), verb = $('#rVerb');
+    function step(n){ steps.forEach(function(s,i){ s.classList.toggle('on', i===n); }); }
+    if(!anim || !MP){ step(3); return; }
+    var L = ln.getTotalLength(), R = ref.getTotalLength();
+    G.set(ln, {strokeDasharray:L, strokeDashoffset:L});
+    G.set(ref, {strokeDasharray:R, strokeDashoffset:R});
+    var tl = G.timeline({repeat:-1, repeatDelay:1.2, paused:true});
+    tl.call(step, [0])
+      .set(rider, {attr:{cx:0, cy:0}})
+      .to(rider, {motionPath:{path:'#rLine', start:0, end:.3}, duration:1.6, ease:'none'}, 0)
+      .to(ln, {strokeDashoffset:L*.7, duration:1.6, ease:'none'}, 0)
+      .call(step, [1])
+      .fromTo(rider, {scale:1}, {scale:1.5, duration:.25, yoyo:true, repeat:1, transformOrigin:'50% 50%'})
+      .to(rider, {motionPath:{path:'#rLine', start:.3, end:.45}, duration:.9, ease:'none'})
+      .to(ln, {strokeDashoffset:L*.55, duration:.9, ease:'none'}, '<')
+      .call(step, [2])
+      .fromTo(der, {scale:.6}, {scale:1.15, duration:.4, ease:'back.out(3)', transformOrigin:'50% 50%'})
+      .to(ref, {strokeDashoffset:0, duration:.8, ease:'power2.inOut'})
+      .to(der, {scale:1, duration:.3})
+      .call(step, [3])
+      .to(rider, {motionPath:{path:'#rLine', start:.45, end:1}, duration:2.6, ease:'power1.inOut'})
+      .to(ln, {strokeDashoffset:0, duration:2.6, ease:'power1.inOut'}, '<')
+      .fromTo(verb, {scale:.6}, {scale:1.2, duration:.4, ease:'back.out(3)', transformOrigin:'0% 50%'})
+      .to(verb, {scale:1, duration:.3})
+      .to({}, {duration:1.4})
+      .to([ln, ref], {strokeDashoffset:function(i){ return i ? R : L; }, duration:.4});
+    whenVisible(box, function(){ tl.play(); }, function(){ tl.pause(); }, .3);
+  })();
+
+  /* ---------- builder ---------- */
+  (function(){
+    var N = [
+      {n:'der Trainer', g:'мужской род', img:'../media/hero-s.webp'},
+      {n:'die Fahrerin', g:'женский род', img:'../media/portrait.webp'},
+      {n:'das Team', g:'средний род', img:'../media/huddle.webp'},
+      {n:'die Räder', g:'множественное', img:'../media/bike.webp'}
+    ];
+    var Rq = ['Кто? Сам что-то делает','Кого? Что? Его кто-то…','Кому? Ему что-то…','Чей? Чья? Чьи?'];
+    var Rn = ['Nominativ','Akkusativ','Dativ','Genitiv'];
+    var D = [
+      [['der','Das ist der Trainer, <mark>der</mark> jeden Tag <em>fährt</em>.','Это тренер, который ездит каждый день.'],
+       ['den','Das ist der Trainer, <mark>den</mark> alle <em>kennen</em>.','Это тренер, которого все знают.'],
+       ['dem','Das ist der Trainer, <mark>dem</mark> ich <em>vertraue</em>.','Это тренер, которому я доверяю.'],
+       ['dessen','Das ist der Trainer, <mark>dessen</mark> Rad grün <em>ist</em>.','Это тренер, чей велосипед зелёный.']],
+      [['die','Das ist die Fahrerin, <mark>die</mark> das Rennen <em>gewinnt</em>.','Это гонщица, которая выигрывает гонку.'],
+       ['die','Das ist die Fahrerin, <mark>die</mark> ich <em>bewundere</em>.','Это гонщица, которой я восхищаюсь.'],
+       ['der','Das ist die Fahrerin, <mark>der</mark> ich <em>helfe</em>.','Это гонщица, которой я помогаю.'],
+       ['deren','Das ist die Fahrerin, <mark>deren</mark> Brille grün <em>ist</em>.','Это гонщица, чьи очки зелёные.']],
+      [['das','Das ist das Team, <mark>das</mark> in Wien <em>trainiert</em>.','Это команда, которая тренируется в Вене.'],
+       ['das','Das ist das Team, <mark>das</mark> ich <em>unterstütze</em>.','Это команда, которую я поддерживаю.'],
+       ['dem','Das ist das Team, <mark>dem</mark> ich <em>folge</em>.','Это команда, за которой я слежу.'],
+       ['dessen','Das ist das Team, <mark>dessen</mark> Trikots schwarz <em>sind</em>.','Это команда, чьи майки чёрные.']],
+      [['die','Das sind die Räder, <mark>die</mark> hier <em>stehen</em>.','Это велосипеды, которые стоят здесь.'],
+       ['die','Das sind die Räder, <mark>die</mark> wir <em>verkaufen</em>.','Это велосипеды, которые мы продаём.'],
+       ['denen','Das sind die Räder, <mark>denen</mark> nichts <em>passiert</em>.','Это велосипеды, с которыми ничего не случится.'],
+       ['deren','Das sind die Räder, <mark>deren</mark> Bremsen neu <em>sind</em>.','Это велосипеды, у которых новые тормоза.']]
+    ];
+    var n = 0, r = 0, auto = null, manual = false;
+    var res = $('#bRes'), pr = $('#bPr');
+    function draw(){
+      var d = D[n][r];
+      $$('#tNoun button').forEach(function(b,i){ b.classList.toggle('on', i===n); });
+      $$('#tRole button').forEach(function(b,i){ b.classList.toggle('on', i===r); });
+      $('#bQ').textContent = Rq[r];
+      pr.textContent = d[0];
+      $('#bEx').innerHTML = d[1]; $('#bTr').textContent = d[2];
+      $('#bSay').dataset.say = d[1].replace(/<[^>]+>/g,'');
+      $('#bWhy').innerHTML = '<span>' + N[n].n + ' → ' + N[n].g + '</span><span>' + Rn[r] + '</span><span>глагол в конце</span>';
+      res.style.backgroundImage = 'url(' + N[n].img + ')';
+      if(anim){
+        G.fromTo(pr, {yPercent:60, rotation:4}, {yPercent:0, rotation:0, duration:.6, ease:'power4.out'});
+        G.from('#bEx, #bTr, #bWhy span', {y:16, duration:.5, ease:'power3.out', stagger:.05});
+      }
+    }
+    $$('#tNoun button').forEach(function(b){ b.addEventListener('click', function(){ manual = true; stop(); n = +b.dataset.n; draw(); }); });
+    $$('#tRole button').forEach(function(b){ b.addEventListener('click', function(){ manual = true; stop(); r = +b.dataset.r; draw(); }); });
+    function stop(){ clearInterval(auto); auto = null; }
+    draw();
+    if(!reduce) whenVisible($('#app'), function(){ if(manual || auto) return; auto = setInterval(function(){ r++; if(r > 3){ r = 0; n = (n+1) % 4; } draw(); }, 2600); }, stop, .4);
+  })();
+
+  /* ---------- grid system: article vs relative pronoun ---------- */
+  (function(){
+    var tbl = $('#gsTbl'); if(!tbl) return;
+    var rows = ['Nom','Akk','Dat','Gen'];
+    var A = [['der','die','das','die'],['den','die','das','die'],['dem','der','dem','den'],['des','der','des','der']];
+    var P = [['der','die','das','die'],['den','die','das','die'],['dem','der','dem','denen'],['dessen','deren','dessen','deren']];
+    var h = '';
+    rows.forEach(function(rw, i){
+      h += '<div class="rh">' + rw + '</div>';
+      for(var j=0;j<4;j++){ var x = A[i][j] !== P[i][j]; h += '<div class="' + (x ? 'x' : '') + '" data-a="' + A[i][j] + '" data-p="' + P[i][j] + '"><span>' + P[i][j] + '</span></div>'; }
+    });
+    tbl.innerHTML = h;
+    var cells = $$('div[data-a]', tbl), mode = 'p', loop = null, manual = false;
+    function set(m){
+      mode = m;
+      $('#gsArt').className = 'pill ' + (m==='a' ? 'lm' : 'ol'); $('#gsArt').style.color = m==='a' ? '' : '#fff';
+      $('#gsRel').className = 'pill ' + (m==='p' ? 'lm' : 'ol'); $('#gsRel').style.color = m==='p' ? '' : '#fff';
+      cells.forEach(function(c){
+        var s = $('span', c), v = m==='a' ? c.dataset.a : c.dataset.p;
+        if(s.textContent === v) return;
+        if(anim){ G.to(s, {rotationX:90, duration:.18, ease:'power2.in', onComplete:function(){ s.textContent = v; G.fromTo(s, {rotationX:-90}, {rotationX:0, duration:.4, ease:'back.out(3)'}); }}); }
+        else s.textContent = v;
+      });
+      cells.forEach(function(c){ c.classList.toggle('x', m==='p' && c.dataset.a !== c.dataset.p); });
+    }
+    $('#gsArt').addEventListener('click', function(){ manual = true; clearInterval(loop); set('a'); });
+    $('#gsRel').addEventListener('click', function(){ manual = true; clearInterval(loop); set('p'); });
+    if(anim) G.from(cells, {scale:.5, duration:.6, ease:'back.out(2.5)', stagger:{each:.03, grid:[4,4], from:'start'}, scrollTrigger:{trigger:tbl, start:'top 85%', once:true}});
+    if(!reduce) whenVisible($('#gridBox'), function(){ if(manual || loop) return; loop = setInterval(function(){ set(mode==='p' ? 'a' : 'p'); }, 2400); }, function(){ clearInterval(loop); loop = null; }, .35);
+  })();
+
+  /* ---------- merge machine with FLIP ---------- */
+  (function(){
+    var box = $('#mg'); if(!box) return;
+    var line = $('#mgLine');
+    function T(k, t, c){ return '<span class="t' + (c ? ' ' + c : '') + '" data-k="' + k + '">' + t + '</span>'; }
+    var EX = [
+      {ru:'Я знаю мужчину, который живёт в Вене.', s:[
+        {h:[T('a','Ich'),T('b','kenne'),T('c','den'),T('d','Mann'),T('p','.'),T('e','Der'),T('f','Mann'),T('g','wohnt','vb'),T('h','in'),T('i','Wien'),T('q','.')], c:'Два предложения. <b>Mann</b> повторяется дважды.'},
+        {h:[T('a','Ich'),T('b','kenne'),T('c','den'),T('d','Mann'),T('p','.'),T('e','Der','gh'),T('f','Mann','gh'),T('g','wohnt','vb'),T('h','in'),T('i','Wien'),T('q','.')], c:'Повтор убираем. От «Der Mann» остаётся только <b>der</b>.'},
+        {h:[T('a','Ich'),T('b','kenne'),T('c','den'),T('d','Mann'),T('p',',','cm'),T('e','der','pr'),T('g','wohnt','vb'),T('h','in'),T('i','Wien'),T('q','.')], c:'Точка становится запятой. <b>der</b> встаёт сразу после неё.'},
+        {h:[T('a','Ich'),T('b','kenne'),T('c','den'),T('d','Mann'),T('p',',','cm'),T('e','der','pr'),T('h','in'),T('i','Wien'),T('g','wohnt','vb'),T('q','.')], c:'Глагол <b>wohnt</b> уезжает в самый конец. Готово.'}
+      ]},
+      {ru:'Это велосипед, который я вчера купил.', s:[
+        {h:[T('a','Das'),T('b','ist'),T('c','das'),T('d','Rad'),T('p','.'),T('e','Ich'),T('f','habe','vb'),T('g','das'),T('h','Rad'),T('i','gestern'),T('j','gekauft'),T('q','.')], c:'Два предложения. <b>das Rad</b> снова повторяется.'},
+        {h:[T('a','Das'),T('b','ist'),T('c','das'),T('d','Rad'),T('p','.'),T('e','Ich'),T('f','habe','vb'),T('g','das','gh'),T('h','Rad','gh'),T('i','gestern'),T('j','gekauft'),T('q','.')], c:'Второе «das Rad» лишнее. От него останется <b>das</b>.'},
+        {h:[T('a','Das'),T('b','ist'),T('c','das'),T('d','Rad'),T('p',',','cm'),T('g','das','pr'),T('e','ich'),T('f','habe','vb'),T('i','gestern'),T('j','gekauft'),T('q','.')], c:'<b>das</b> прыгает в начало придаточного, сразу после запятой.'},
+        {h:[T('a','Das'),T('b','ist'),T('c','das'),T('d','Rad'),T('p',',','cm'),T('g','das','pr'),T('e','ich'),T('i','gestern'),T('j','gekauft'),T('f','habe','vb'),T('q','.')], c:'Спрягаемый <b>habe</b> едет в конец. Даже после gekauft.'}
+      ]},
+      {ru:'Люди, с которыми я катаюсь, милые.', s:[
+        {h:[T('a','Die'),T('b','Leute'),T('c','sind'),T('d','nett'),T('p','.'),T('e','Ich'),T('f','fahre','vb'),T('g','mit'),T('h','den'),T('i','Leuten'),T('q','.')], c:'Два предложения. Leute и Leuten это одни и те же люди.'},
+        {h:[T('a','Die'),T('b','Leute'),T('c','sind'),T('d','nett'),T('p','.'),T('e','Ich'),T('f','fahre','vb'),T('g','mit'),T('h','den','gh'),T('i','Leuten','gh'),T('q','.')], c:'Предлог <b>mit</b> остаётся. «den Leuten» станет <b>denen</b>.'},
+        {h:[T('a','Die'),T('b','Leute'),T('p',',','cm'),T('g','mit','pr'),T('h','denen','pr'),T('e','ich'),T('f','fahre','vb'),T('r',',','cm'),T('c','sind'),T('d','nett'),T('q','.')], c:'Придаточное встаёт прямо за <b>Leute</b>. Предлог едет первым, <b>fahre</b> в конце.'},
+        {h:[T('a','Die'),T('b','Leute'),T('p',',','cm'),T('g','mit','pr'),T('h','denen','pr'),T('e','ich'),T('f','fahre','vb'),T('r',',','cm'),T('c','sind','vb'),T('d','nett'),T('q','.')], c:'После второй запятой главное едет дальше: <b>sind nett</b>.'}
+      ]}
+    ];
+    var ex = 0, st = 0, timer = null, running = false;
+    function render(){
+      var prev = {};
+      $$('.t', line).forEach(function(t){ var r = t.getBoundingClientRect(); prev[t.dataset.k] = {x:r.left, y:r.top}; });
+      var d = EX[ex], s = d.s[st];
+      line.innerHTML = s.h.join(' ');
+      $('#mgCap').innerHTML = s.c; $('#mgRu').textContent = st === 3 ? d.ru : '';
+      $('#mgEx').textContent = 'Пример ' + (ex+1) + ' из ' + EX.length; $('#mgSt').textContent = 'Шаг ' + (st+1);
+      $$('#mgDots i').forEach(function(x,i){ x.classList.toggle('on', i<=st); });
+      if(!anim) return;
+      $$('.t', line).forEach(function(t){
+        var p = prev[t.dataset.k], r = t.getBoundingClientRect();
+        if(p){
+          var dx = p.x - r.left, dy = p.y - r.top;
+          if(Math.abs(dx) + Math.abs(dy) < 2) return;
+          var arc = t.classList.contains('vb') || t.classList.contains('pr');
+          if(arc && MP) G.fromTo(t, {x:dx, y:dy}, {motionPath:{path:[{x:dx,y:dy},{x:dx/2,y:Math.min(dy,0)-60},{x:0,y:0}], curviness:1.4}, duration:1.1, ease:'power2.inOut'});
+          else G.fromTo(t, {x:dx, y:dy}, {x:0, y:0, duration:.8, ease:'power3.inOut'});
+        } else G.from(t, {y:30, scale:.6, duration:.6, ease:'back.out(2.5)'});
+      });
+    }
+    function next(){ st++; if(st > 3){ st = 0; ex = (ex+1) % EX.length; } render(); }
+    function loop(){ timer = setTimeout(function(){ if(!running) return; next(); loop(); }, st === 3 ? 3800 : 2600); }
+    if(reduce){ st = 3; }
+    render();
+    box.addEventListener('click', function(){ clearTimeout(timer); next(); if(running) loop(); });
+    box.addEventListener('keydown', function(e){ if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); box.click(); } });
+    if(!reduce) whenVisible(box, function(){ if(running) return; running = true; loop(); }, function(){ running = false; clearTimeout(timer); }, .3);
+  })();
+
+  /* ---------- specimen: letters breathe ---------- */
+  if(anim){
+    G.from('.spec-l .big', {letterSpacing:'0.08em', duration:1.4, ease:'power3.out', scrollTrigger:{trigger:'.spec-l', start:'top 82%', once:true}});
+    G.from('.sw', {y:40, rotation:function(i){ return i%2 ? 4 : -4; }, duration:.8, ease:'back.out(2)', stagger:.08, scrollTrigger:{trigger:'.swatches', start:'top 85%', once:true}});
+  }
+
+  /* ---------- quiz ---------- */
+  var Q = [
+    {q:'Der Mann, ___ dort steht, ist mein Trainer.', o:['der','den','dem'], c:0, r:'Мужчина, который там стоит…', x:'Он сам стоит, значит Nominativ. der Mann → der.'},
+    {q:'Die Frau, ___ ich gestern gesehen habe, fährt Rad.', o:['der','die','deren'], c:1, r:'Женщина, которую я вчера видел…', x:'Её видели: Akkusativ. Женский род в Akkusativ остаётся die.'},
+    {q:'Die Kinder, ___ ich helfe, sind sieben.', o:['den','die','denen'], c:2, r:'Дети, которым я помогаю…', x:'helfen требует Dativ. Во множественном это denen, а не den.'},
+    {q:'Das Rad, ___ Bremsen kaputt sind, steht dort.', o:['das','dessen','deren'], c:1, r:'Велосипед, у которого сломаны тормоза…', x:'Чьи тормоза? Genitiv. das Rad → dessen.'},
+    {q:'Die Stadt, in ___ ich wohne, ist klein.', o:['die','dem','der'], c:2, r:'Город, в котором я живу…', x:'in + где? = Dativ. die Stadt в Dativ это der.'},
+    {q:'Alles, ___ du brauchst, ist hier.', o:['das','was','wo'], c:1, r:'Всё, что тебе нужно…', x:'После alles всегда was.'}
+  ];
+  var qz = $('#qz'), qi = 0, res = [];
+  function bar(){ return '<div class="qbar">' + Q.map(function(_,i){ return '<i class="' + (res[i]===true?'ok':res[i]===false?'bad':i===qi?'cur':'') + '"></i>'; }).join('') + '</div>'; }
+  function drawQ(){
+    var it = Q[qi];
+    qz.innerHTML = bar() + '<p class="qn">Вопрос ' + (qi+1) + ' из ' + Q.length + '</p>' +
+      '<p class="qq">' + it.q.replace('___','<u id="blank">___</u>') + '</p><p class="qr">' + it.r + '</p>' +
+      '<div class="qo">' + it.o.map(function(o,i){ return '<button type="button" data-i="'+i+'">'+o+'</button>'; }).join('') + '</div>' +
+      '<div class="qx" id="qx"><svg class="ic"><use href="#i-brain"/></svg><span>Два вопроса: к кому прицепились и что он делает в придаточном.</span></div>';
+    $$('.qo button', qz).forEach(function(b){ b.onclick = function(){ answer(+b.dataset.i); }; });
+    if(anim) G.from($$('.qo button', qz), {y:20, duration:.5, ease:'power3.out', stagger:.06});
+  }
+  function burstConfetti(n){
+    if(!anim) return;
+    var colors = ['#A6F64B','#000000','#5D9CD2','#EDF2F0','#79CF1E'];
+    for(var i=0;i<n;i++){
+      var c = document.createElement('i'); c.className = 'conf'; c.style.background = colors[i%colors.length]; qz.appendChild(c);
+      G.fromTo(c, {x:0, y:0, rotation:0}, {x:G.utils.random(-260,260), y:G.utils.random(-220,160), rotation:G.utils.random(-540,540), opacity:0, duration:G.utils.random(1,1.8), ease:'power3.out', onComplete:(function(el){ return function(){ el.remove(); }; })(c)});
+    }
+  }
+  function answer(i){
+    var it = Q[qi], ok = i===it.c; res[qi] = ok;
+    $$('.qo button', qz).forEach(function(b){ b.disabled = true; var k=+b.dataset.i; if(k===it.c) b.classList.add('ok'); else if(k===i) b.classList.add('bad'); });
+    var chosen = $$('.qo button', qz)[i];
+    if(anim){ ok ? G.fromTo(chosen, {scale:.9}, {scale:1, duration:.6, ease:'elastic.out(1,.4)'}) : G.fromTo(chosen, {x:-8}, {x:0, duration:.5, ease:'elastic.out(1.2,.2)'}); }
+    $('#blank').textContent = it.o[it.c];
+    var qx = $('#qx'); qx.classList.toggle('bad', !ok);
+    qx.innerHTML = '<svg class="ic"><use href="#i-' + (ok?'circle-check':'circle-x') + '"/></svg><span>' + (ok ? '<b>Верно.</b> ' : '<b>Мимо.</b> ') + it.x + '</span>';
+    if(ok) burstConfetti(12);
+    say(it.q.replace('___', it.o[it.c]));
+    $('.qbar', qz).outerHTML = bar();
+    var nb = document.createElement('button'); nb.className = 'btn bk qnext'; nb.type='button';
+    nb.innerHTML = qi < Q.length-1 ? 'Дальше ↗' : 'Результат ↗';
+    nb.onclick = function(){ qi++; qi < Q.length ? drawQ() : done(); };
+    qz.appendChild(nb); nb.focus({preventScroll:true});
+  }
+  function done(){
+    var s = res.filter(Boolean).length;
+    var msg = s===6 ? 'Шесть из шести. Маршрут пройден без падений.' : s>=4 ? 'Хорошо. Проверь ещё раз denen, dessen и deren.' : 'Нормально для первого заезда. Вернись к конструктору и попробуй снова.';
+    var link = AD ? '<a class="btn" href="#platform">Следующий подъём ↗</a>' : '<a class="btn" href="#cheat">Шпаргалка ↗</a>';
+    qz.innerHTML = bar() + '<div class="qres"><div class="score">'+s+'/6</div><p class="qq" style="margin-top:6px">'+msg+'</p>' +
+      '<div class="cta-row"><button type="button" class="btn bk" id="again">Ещё раз</button>' + link + '</div></div>';
+    $('#again').onclick = function(){ qi = 0; res = []; drawQ(); };
+    if(anim){ G.from('.qres .score', {yPercent:60, duration:1, ease:'power4.out'}); burstConfetti(s*8); }
+  }
+  drawQ();
+
+  /* ---------- thanks squiggle draws ---------- */
+  (function(){
+    var p = $('#sqPath'); if(!p) return;
+    if(!anim) return;
+    var L = p.getTotalLength();
+    G.set(p, {strokeDasharray:L, strokeDashoffset:L});
+    G.to(p, {strokeDashoffset:0, ease:'none', scrollTrigger:{trigger:'.thanks', start:'top 80%', end:'bottom 70%', scrub:.8}});
+  })();
+
+  /* ---------- store + cart (ad) ---------- */
+  (function(){
+    var fA = $('#fA'), fB = $('#fB'); if(!fA) return;
+    function upd(){
+      var a = fA.checked, b = fB.checked, items = '', sum = 0, old = '';
+      if(!a && !b){ a = fA.checked = true; }
+      $('#pA').classList.toggle('off', !a); $('#pB').classList.toggle('off', !b);
+      if(a) items += '<div class="ci"><img src="../media/p1-home.webp" alt=""><div><b>Stellas A0–A2</b><small>С нуля до A2 · навсегда</small></div></div>';
+      if(b) items += '<div class="ci"><img src="../media/gemini-vocab.jpg" alt=""><div><b>Stellas B1–C1</b><small>B1, B2, C1 · экзамены · навсегда</small></div></div>';
+      if(a && b){ items += '<div class="ci"><img src="../media/p6-tracker.webp" alt=""><div><b>Бонус: A0–A2 українською</b><small>В подарок к A0–C1 · <s>20 €</s> 0 €</small></div></div>'; sum = 30; old = '40 €'; }
+      else sum = 20;
+      $('#cartItems').innerHTML = items; $('#cSum').textContent = sum + ' €'; $('#cOld').textContent = old;
+      if(anim) G.fromTo('#cSum', {yPercent:50}, {yPercent:0, duration:.5, ease:'back.out(3)'});
+    }
+    fA.addEventListener('change', upd); fB.addEventListener('change', upd); upd();
+  })();
+
+  /* ---------- videos ---------- */
+  var pio = 'IntersectionObserver' in window ? new IntersectionObserver(function(es){ es.forEach(function(en){ if(en.isIntersecting){ var v = en.target; if(v.dataset.poster){ v.poster = v.dataset.poster; } pio.unobserve(v); } }); }, {rootMargin:'900px 0px'}) : null;
+  $$('video.vid').forEach(function(v){ pio ? pio.observe(v) : (v.poster = v.dataset.poster); });
+  $$('video.vid').forEach(function(v){
+    whenVisible(v, function(){ try{ v.preload='auto'; var p = v.play(); p && p.catch(function(){}); }catch(e){} }, function(){ try{ v.pause(); }catch(e){} });
+  });
+
+  /* ---------- dock (ad) ---------- */
+  var dock = $('#dock'), store = $('#store');
+  if(dock && store && 'IntersectionObserver' in window){
+    var pastHero = false, atStore = false;
+    function upd(){ var s = pastHero && !atStore; dock.classList.toggle('show', s); dock.setAttribute('aria-hidden', !s); $('a', dock).tabIndex = s ? 0 : -1; }
+    new IntersectionObserver(function(es){ es.forEach(function(en){ pastHero = !en.isIntersecting && en.boundingClientRect.top < 0; upd(); }); }).observe($('.hero'));
+    new IntersectionObserver(function(es){ es.forEach(function(en){ atStore = en.isIntersecting; upd(); }); }).observe(store);
+  }
+
+  if(G){
+    window.addEventListener('load', function(){ ScrollTrigger.refresh(); });
+    if(document.fonts && document.fonts.ready) document.fonts.ready.then(function(){ ScrollTrigger.refresh(); });
+  }
+}
+if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', relInit); else relInit();
+</script>
+
+</body>
+</html>
