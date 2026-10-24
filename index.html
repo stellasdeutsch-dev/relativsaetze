@@ -462,7 +462,7 @@ html.no-tts .say{display:none}
 @media (min-width:900px){.store{grid-template-columns:200px 1fr 340px;align-items:start}.prods{grid-template-columns:1fr 1fr}.cart{position:sticky;top:80px}}
 .revs{display:grid;grid-auto-flow:column;grid-auto-columns:min(78vw,320px);gap:12px;overflow-x:auto;padding:8px var(--gut) 20px;margin:20px calc(var(--gut)*-1) 0;scrollbar-width:none;scroll-snap-type:x mandatory;align-items:start}
 .revs::-webkit-scrollbar{display:none}
-.revs img{width:100%;border-radius:18px;scroll-snap-align:start}
+.revs img{width:100%;height:auto;border-radius:18px;scroll-snap-align:start}
 
 .dock{position:fixed;left:10px;right:10px;bottom:10px;z-index:70;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 8px 8px 18px;border-radius:999px;background:rgba(0,0,0,.94);color:#fff;box-shadow:0 16px 36px -14px rgba(0,0,0,.6);translate:0 140%;transition:translate .4s cubic-bezier(.2,1.2,.4,1)}
 .dock.show{translate:0 0}
@@ -1113,6 +1113,8 @@ html.js:not(.gs) .rv:not(.in){translate:0 26px}
     <div style="margin-top:60px">
       <div class="lab"><b>Отзывы</b><span class="br">Как есть</span></div>
       <div class="revs">
+        <img src="media/rv-s-nulya-dlya-postupleniya.webp" alt="Отзыв студентки, которая начала немецкий с нуля для поступления" loading="lazy" width="966" height="428">
+        <img src="media/rv-nemeckij-pazl.webp" alt="Отзыв: темы идут по порядку, объяснения разжёваны по-человечески" loading="lazy" width="994" height="626">
         <img src="media/r3.webp" alt="Отзыв студентки о платформе" loading="lazy">
         <img src="media/r5.webp" alt="Отзыв студента о платформе" loading="lazy">
         <img src="media/r1.webp" alt="Отзыв студентки о платформе" loading="lazy">
